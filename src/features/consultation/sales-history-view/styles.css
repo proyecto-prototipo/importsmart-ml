@@ -1,0 +1,446 @@
+.consultation-sales-history-view-page { display: grid; gap: 18px; }
+.consultation-sales-history-view-hero { display: flex; justify-content: space-between; gap: 22px; align-items: center; padding: 26px; border-radius: 30px; background: linear-gradient(135deg,#ffffff,#f8fafc); border: 1px solid #e2e8f0; box-shadow: 0 18px 55px rgba(15,23,42,.07); }
+.consultation-sales-history-view-eyebrow { display: inline-flex; padding: 7px 11px; border-radius: 999px; background: color-mix(in srgb, #16a34a 10%, white); color: #16a34a; font-size: 12px; font-weight: 950; text-transform: uppercase; letter-spacing: .09em; }
+.consultation-sales-history-view-hero h2 { margin: 12px 0 8px; font-size: clamp(26px,4vw,42px); color: #0f172a; letter-spacing: -1.2px; }
+.consultation-sales-history-view-hero p { margin: 0; color: #64748b; line-height: 1.7; max-width: 860px; }
+.consultation-sales-history-view-hero-actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
+.consultation-sales-history-view-hero-actions button, .consultation-sales-history-view-row-actions button, .consultation-sales-history-view-modal-actions button { border: 0; border-radius: 14px; padding: 11px 14px; font-weight: 900; background: #16a34a; color: white; box-shadow: 0 12px 28px color-mix(in srgb, #16a34a 22%, transparent); }
+.consultation-sales-history-view-hero-actions button:last-child, .consultation-sales-history-view-modal-actions button:first-child { background: #0f172a; box-shadow: none; }
+.consultation-sales-history-view-toolbar { display: grid; grid-template-columns: minmax(280px, 1.5fr) repeat(2, minmax(150px, 1fr)); gap: 12px; padding: 16px; border-radius: 24px; background: white; border: 1px solid #e2e8f0; box-shadow: 0 10px 30px rgba(15,23,42,.05); }
+.consultation-sales-history-view-toolbar label { display: grid; gap: 7px; color: #334155; font-weight: 900; font-size: 13px; }
+.consultation-sales-history-view-toolbar input, .consultation-sales-history-view-toolbar select, .consultation-sales-history-view-form input { border: 1px solid #dbe3ef; background: #f8fafc; border-radius: 15px; padding: 12px 13px; outline: none; color: #0f172a; }
+.consultation-sales-history-view-toolbar input:focus, .consultation-sales-history-view-toolbar select:focus, .consultation-sales-history-view-form input:focus { border-color: #16a34a; box-shadow: 0 0 0 4px color-mix(in srgb, #16a34a 14%, transparent); background: white; }
+.consultation-sales-history-view-summary { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; }
+.consultation-sales-history-view-summary article { padding: 18px; border-radius: 24px; background: white; border: 1px solid #e2e8f0; display: grid; gap: 4px; }
+.consultation-sales-history-view-summary strong { font-size: 28px; letter-spacing: -.8px; color: #0f172a; }
+.consultation-sales-history-view-summary span { color: #64748b; font-weight: 700; }
+.consultation-sales-history-view-table-card { background: white; border: 1px solid #e2e8f0; border-radius: 28px; overflow: hidden; box-shadow: 0 14px 42px rgba(15,23,42,.06); }
+.consultation-sales-history-view-table-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 20px 22px; border-bottom: 1px solid #e2e8f0; }
+.consultation-sales-history-view-table-head span { color: #16a34a; font-weight: 950; text-transform: uppercase; letter-spacing: .08em; font-size: 12px; }
+.consultation-sales-history-view-table-head h3 { margin: 5px 0 0; font-size: 22px; }
+.consultation-sales-history-view-table-head small { color: #64748b; font-weight: 900; }
+.consultation-sales-history-view-table-wrap { overflow-x: auto; }
+.consultation-sales-history-view-table-wrap table { width: 100%; border-collapse: collapse; min-width: 920px; }
+.consultation-sales-history-view-table-wrap th { text-align: left; padding: 14px 16px; color: #475569; background: #f8fafc; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
+.consultation-sales-history-view-table-wrap td { padding: 14px 16px; border-top: 1px solid #eef2f7; color: #334155; font-weight: 650; vertical-align: middle; }
+.consultation-sales-history-view-table-wrap tr:hover td { background: #f8fafc; }
+.consultation-sales-history-view-row-actions { display: flex; flex-wrap: wrap; gap: 7px; min-width: 220px; }
+.consultation-sales-history-view-row-actions button { padding: 8px 10px; border-radius: 12px; font-size: 12px; box-shadow: none; background: color-mix(in srgb, #16a34a 10%, white); color: #16a34a; border: 1px solid color-mix(in srgb, #16a34a 20%, white); }
+.consultation-sales-history-view-badge { display: inline-flex; align-items: center; padding: 6px 10px; border-radius: 999px; font-size: 12px; font-weight: 950; white-space: nowrap; }
+.consultation-sales-history-view-badge.success { color: #047857; background: #d1fae5; }
+.consultation-sales-history-view-badge.warning { color: #b45309; background: #fef3c7; }
+.consultation-sales-history-view-badge.danger { color: #b91c1c; background: #fee2e2; }
+.consultation-sales-history-view-badge.neutral { color: #475569; background: #f1f5f9; }
+.consultation-sales-history-view-empty { text-align: center; color: #64748b; padding: 34px !important; }
+.consultation-sales-history-view-toast { position: fixed; right: 28px; bottom: 28px; padding: 14px 18px; border-radius: 18px; color: white; background: #0f172a; box-shadow: 0 18px 50px rgba(15,23,42,.28); z-index: 80; font-weight: 900; }
+.consultation-sales-history-view-modal-backdrop { position: fixed; inset: 0; background: rgba(15,23,42,.58); display: grid; place-items: center; padding: 20px; z-index: 50; }
+.consultation-sales-history-view-modal { position: relative; max-width: 760px; max-height: min(760px, 92vh); overflow-y: auto; width: 100%; padding: 28px; background: white; border-radius: 30px; box-shadow: 0 24px 90px rgba(15,23,42,.35); }
+.consultation-sales-history-view-modal h3 { margin: 14px 0 18px; font-size: 28px; letter-spacing: -.8px; }
+.consultation-sales-history-view-close { position: absolute; top: 16px; right: 16px; width: 38px; height: 38px; border-radius: 14px; border: 0; background: #f1f5f9; color: #0f172a; font-size: 24px; }
+.consultation-sales-history-view-detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+.consultation-sales-history-view-detail-grid article { padding: 14px; border-radius: 18px; background: #f8fafc; border: 1px solid #e2e8f0; }
+.consultation-sales-history-view-detail-grid span { display: block; color: #64748b; font-weight: 900; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }
+.consultation-sales-history-view-detail-grid strong { display: block; margin-top: 6px; color: #0f172a; }
+.consultation-sales-history-view-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+.consultation-sales-history-view-form-grid label { display: grid; gap: 7px; font-weight: 900; color: #334155; }
+.consultation-sales-history-view-modal-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 22px; }
+@media (max-width: 1100px) { .consultation-sales-history-view-hero { flex-direction: column; align-items: flex-start; } .consultation-sales-history-view-toolbar { grid-template-columns: 1fr 1fr; } .consultation-sales-history-view-summary { grid-template-columns: 1fr; } }
+@media (max-width: 680px) { .consultation-sales-history-view-toolbar, .consultation-sales-history-view-detail-grid, .consultation-sales-history-view-form-grid { grid-template-columns: 1fr; } .consultation-sales-history-view-hero-actions { width: 100%; } .consultation-sales-history-view-hero-actions button { flex: 1; } }
+
+
+/* ============================================================
+   VENTAS HISTÓRICAS - USUARIO CONSULTA
+   Pegar al final del styles.css
+   ============================================================ */
+
+.consultation-sales-history-view-page,
+.consultation-sales-history-view-page * {
+  box-sizing: border-box;
+}
+
+.consultation-sales-history-view-page {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.consultation-sales-history-view-hero {
+  background:
+    radial-gradient(circle at top left, rgba(22, 163, 74, 0.15), transparent 34%),
+    linear-gradient(135deg, #ffffff, #f8fafc);
+}
+
+.consultation-sales-history-view-hero-actions button:first-child {
+  background: linear-gradient(135deg, #16a34a, #059669);
+  box-shadow: 0 12px 28px rgba(22, 163, 74, 0.22);
+}
+
+.consultation-sales-source-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 0.9fr);
+  gap: 18px;
+  align-items: stretch;
+  padding: 22px;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top left, rgba(22, 163, 74, 0.13), transparent 34%),
+    linear-gradient(135deg, #ffffff, #f8fafc);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 14px 42px rgba(15, 23, 42, 0.06);
+}
+
+.consultation-sales-source-card > div:first-child span,
+.consultation-sales-chart-head span {
+  display: inline-flex;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: #ecfdf5;
+  color: #16a34a;
+  font-size: 12px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.consultation-sales-source-card h3 {
+  margin: 12px 0 8px;
+  color: #0f172a;
+  font-size: 26px;
+  letter-spacing: -0.7px;
+}
+
+.consultation-sales-source-card p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+.consultation-sales-source-status {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.consultation-sales-source-status article {
+  display: grid;
+  gap: 6px;
+  align-content: center;
+  padding: 16px;
+  border-radius: 22px;
+  background: white;
+  border: 1px solid #e2e8f0;
+}
+
+.consultation-sales-source-status strong {
+  color: #0f172a;
+  font-size: 20px;
+  letter-spacing: -0.5px;
+}
+
+.consultation-sales-source-status span {
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.consultation-sales-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.consultation-sales-kpis article {
+  padding: 18px;
+  border-radius: 24px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 12px 34px rgba(15, 23, 42, 0.05);
+}
+
+.consultation-sales-kpis article > span {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: #ecfdf5;
+  margin-bottom: 12px;
+}
+
+.consultation-sales-kpis strong {
+  display: block;
+  color: #0f172a;
+  font-size: 26px;
+  line-height: 1;
+  letter-spacing: -0.8px;
+}
+
+.consultation-sales-kpis p {
+  margin: 7px 0 0;
+  color: #64748b;
+  font-weight: 800;
+}
+
+.consultation-sales-charts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.consultation-sales-charts article {
+  padding: 20px;
+  border-radius: 26px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 14px 38px rgba(15, 23, 42, 0.06);
+}
+
+.consultation-sales-chart-head {
+  margin-bottom: 18px;
+}
+
+.consultation-sales-chart-head h3 {
+  margin: 8px 0 0;
+  color: #0f172a;
+  font-size: 22px;
+  letter-spacing: -0.5px;
+}
+
+.consultation-sales-chart-bars {
+  display: grid;
+  gap: 14px;
+}
+
+.consultation-sales-chart-bar div {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 7px;
+}
+
+.consultation-sales-chart-bar strong {
+  color: #0f172a;
+}
+
+.consultation-sales-chart-bar small {
+  color: #64748b;
+  font-weight: 900;
+}
+
+.consultation-sales-chart-bar > span {
+  display: block;
+  overflow: hidden;
+  height: 13px;
+  border-radius: 999px;
+  background: #e2e8f0;
+}
+
+.consultation-sales-chart-bar i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #16a34a, #22c55e);
+}
+
+.consultation-sales-detail-subtitle {
+  margin: -10px 0 18px;
+  color: #64748b;
+  font-weight: 800;
+}
+
+.consultation-sales-insight {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 20px;
+  background: #ecfdf5;
+  border: 1px solid #bbf7d0;
+}
+
+.consultation-sales-insight strong {
+  color: #047857;
+}
+
+.consultation-sales-insight p {
+  margin: 8px 0 0;
+  color: #334155;
+  line-height: 1.7;
+}
+
+.consultation-sales-history-view-table-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.consultation-sales-history-view-table-wrap::-webkit-scrollbar {
+  height: 8px;
+}
+
+.consultation-sales-history-view-table-wrap::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 999px;
+}
+
+.consultation-sales-history-view-table-wrap::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+
+/* Responsive */
+
+@media (max-width: 1200px) {
+  .consultation-sales-kpis {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .consultation-sales-source-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+  .consultation-sales-charts {
+    grid-template-columns: 1fr;
+  }
+
+  .consultation-sales-source-status {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .consultation-sales-history-view-table-wrap table {
+    min-width: 980px;
+  }
+}
+
+@media (max-width: 768px) {
+  .consultation-sales-history-view-hero {
+    padding: 20px;
+    border-radius: 24px;
+  }
+
+  .consultation-sales-history-view-hero h2 {
+    font-size: 30px;
+  }
+
+  .consultation-sales-source-card {
+    padding: 18px;
+    border-radius: 24px;
+  }
+
+  .consultation-sales-source-status {
+    grid-template-columns: 1fr;
+  }
+
+  .consultation-sales-kpis {
+    grid-template-columns: 1fr;
+  }
+
+  .consultation-sales-charts article {
+    padding: 18px;
+    border-radius: 24px;
+  }
+
+  .consultation-sales-history-view-toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .consultation-sales-history-view-search {
+    grid-column: 1 / -1;
+  }
+
+  .consultation-sales-history-view-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .consultation-sales-history-view-table-wrap table {
+    min-width: 920px;
+  }
+
+  .consultation-sales-history-view-modal {
+    max-width: 94vw;
+    padding: 24px;
+    border-radius: 24px;
+  }
+
+  .consultation-sales-history-view-detail-grid,
+  .consultation-sales-history-view-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .consultation-sales-history-view-modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .consultation-sales-history-view-modal-actions button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .consultation-sales-history-view-hero {
+    padding: 18px;
+    border-radius: 22px;
+  }
+
+  .consultation-sales-history-view-hero h2 {
+    font-size: 26px;
+  }
+
+  .consultation-sales-history-view-hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .consultation-sales-history-view-hero-actions button {
+    width: 100%;
+  }
+
+  .consultation-sales-source-card {
+    padding: 16px;
+    border-radius: 22px;
+  }
+
+  .consultation-sales-source-card h3 {
+    font-size: 22px;
+  }
+
+  .consultation-sales-chart-head h3 {
+    font-size: 19px;
+  }
+
+  .consultation-sales-history-view-table-wrap table {
+    min-width: 860px;
+  }
+
+  .consultation-sales-history-view-modal-backdrop {
+    padding: 12px;
+    align-items: end;
+  }
+
+  .consultation-sales-history-view-modal {
+    max-width: 100%;
+    max-height: 88vh;
+    border-radius: 24px 24px 0 0;
+    padding: 22px;
+  }
+
+  .consultation-sales-history-view-close {
+    top: 12px;
+    right: 12px;
+    width: 34px;
+    height: 34px;
+    border-radius: 12px;
+    font-size: 22px;
+  }
+
+  .consultation-sales-history-view-toast {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    text-align: center;
+    border-radius: 16px;
+  }
+}

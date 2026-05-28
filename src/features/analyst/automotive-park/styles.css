@@ -1,0 +1,48 @@
+.analyst-automotive-park-page { display: grid; gap: 18px; }
+.analyst-automotive-park-hero { display: flex; justify-content: space-between; gap: 22px; align-items: center; padding: 26px; border-radius: 30px; background: linear-gradient(135deg,#ffffff,#f8fafc); border: 1px solid #e2e8f0; box-shadow: 0 18px 55px rgba(15,23,42,.07); }
+.analyst-automotive-park-eyebrow { display: inline-flex; padding: 7px 11px; border-radius: 999px; background: color-mix(in srgb, #0891b2 10%, white); color: #0891b2; font-size: 12px; font-weight: 950; text-transform: uppercase; letter-spacing: .09em; }
+.analyst-automotive-park-hero h2 { margin: 12px 0 8px; font-size: clamp(26px,4vw,42px); color: #0f172a; letter-spacing: -1.2px; }
+.analyst-automotive-park-hero p { margin: 0; color: #64748b; line-height: 1.7; max-width: 860px; }
+.analyst-automotive-park-hero-actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
+.analyst-automotive-park-hero-actions button, .analyst-automotive-park-row-actions button, .analyst-automotive-park-modal-actions button { border: 0; border-radius: 14px; padding: 11px 14px; font-weight: 900; background: #0891b2; color: white; box-shadow: 0 12px 28px color-mix(in srgb, #0891b2 22%, transparent); }
+.analyst-automotive-park-hero-actions button:last-child, .analyst-automotive-park-modal-actions button:first-child { background: #0f172a; box-shadow: none; }
+.analyst-automotive-park-toolbar { display: grid; grid-template-columns: minmax(280px, 1.5fr) repeat(3, minmax(150px, 1fr)); gap: 12px; padding: 16px; border-radius: 24px; background: white; border: 1px solid #e2e8f0; box-shadow: 0 10px 30px rgba(15,23,42,.05); }
+.analyst-automotive-park-toolbar label { display: grid; gap: 7px; color: #334155; font-weight: 900; font-size: 13px; }
+.analyst-automotive-park-toolbar input, .analyst-automotive-park-toolbar select, .analyst-automotive-park-form input { border: 1px solid #dbe3ef; background: #f8fafc; border-radius: 15px; padding: 12px 13px; outline: none; color: #0f172a; }
+.analyst-automotive-park-toolbar input:focus, .analyst-automotive-park-toolbar select:focus, .analyst-automotive-park-form input:focus { border-color: #0891b2; box-shadow: 0 0 0 4px color-mix(in srgb, #0891b2 14%, transparent); background: white; }
+.analyst-automotive-park-summary { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; }
+.analyst-automotive-park-summary article { padding: 18px; border-radius: 24px; background: white; border: 1px solid #e2e8f0; display: grid; gap: 4px; }
+.analyst-automotive-park-summary strong { font-size: 28px; letter-spacing: -.8px; color: #0f172a; }
+.analyst-automotive-park-summary span { color: #64748b; font-weight: 700; }
+.analyst-automotive-park-table-card { background: white; border: 1px solid #e2e8f0; border-radius: 28px; overflow: hidden; box-shadow: 0 14px 42px rgba(15,23,42,.06); }
+.analyst-automotive-park-table-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 20px 22px; border-bottom: 1px solid #e2e8f0; }
+.analyst-automotive-park-table-head span { color: #0891b2; font-weight: 950; text-transform: uppercase; letter-spacing: .08em; font-size: 12px; }
+.analyst-automotive-park-table-head h3 { margin: 5px 0 0; font-size: 22px; }
+.analyst-automotive-park-table-head small { color: #64748b; font-weight: 900; }
+.analyst-automotive-park-table-wrap { overflow-x: auto; }
+.analyst-automotive-park-table-wrap table { width: 100%; border-collapse: collapse; min-width: 920px; }
+.analyst-automotive-park-table-wrap th { text-align: left; padding: 14px 16px; color: #475569; background: #f8fafc; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
+.analyst-automotive-park-table-wrap td { padding: 14px 16px; border-top: 1px solid #eef2f7; color: #334155; font-weight: 650; vertical-align: middle; }
+.analyst-automotive-park-table-wrap tr:hover td { background: #f8fafc; }
+.analyst-automotive-park-row-actions { display: flex; flex-wrap: wrap; gap: 7px; min-width: 220px; }
+.analyst-automotive-park-row-actions button { padding: 8px 10px; border-radius: 12px; font-size: 12px; box-shadow: none; background: color-mix(in srgb, #0891b2 10%, white); color: #0891b2; border: 1px solid color-mix(in srgb, #0891b2 20%, white); }
+.analyst-automotive-park-badge { display: inline-flex; align-items: center; padding: 6px 10px; border-radius: 999px; font-size: 12px; font-weight: 950; white-space: nowrap; }
+.analyst-automotive-park-badge.success { color: #047857; background: #d1fae5; }
+.analyst-automotive-park-badge.warning { color: #b45309; background: #fef3c7; }
+.analyst-automotive-park-badge.danger { color: #b91c1c; background: #fee2e2; }
+.analyst-automotive-park-badge.neutral { color: #475569; background: #f1f5f9; }
+.analyst-automotive-park-empty { text-align: center; color: #64748b; padding: 34px !important; }
+.analyst-automotive-park-toast { position: fixed; right: 28px; bottom: 28px; padding: 14px 18px; border-radius: 18px; color: white; background: #0f172a; box-shadow: 0 18px 50px rgba(15,23,42,.28); z-index: 80; font-weight: 900; }
+.analyst-automotive-park-modal-backdrop { position: fixed; inset: 0; background: rgba(15,23,42,.58); display: grid; place-items: center; padding: 20px; z-index: 50; }
+.analyst-automotive-park-modal { position: relative; max-width: 760px; max-height: min(760px, 92vh); overflow-y: auto; width: 100%; padding: 28px; background: white; border-radius: 30px; box-shadow: 0 24px 90px rgba(15,23,42,.35); }
+.analyst-automotive-park-modal h3 { margin: 14px 0 18px; font-size: 28px; letter-spacing: -.8px; }
+.analyst-automotive-park-close { position: absolute; top: 16px; right: 16px; width: 38px; height: 38px; border-radius: 14px; border: 0; background: #f1f5f9; color: #0f172a; font-size: 24px; }
+.analyst-automotive-park-detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+.analyst-automotive-park-detail-grid article { padding: 14px; border-radius: 18px; background: #f8fafc; border: 1px solid #e2e8f0; }
+.analyst-automotive-park-detail-grid span { display: block; color: #64748b; font-weight: 900; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }
+.analyst-automotive-park-detail-grid strong { display: block; margin-top: 6px; color: #0f172a; }
+.analyst-automotive-park-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+.analyst-automotive-park-form-grid label { display: grid; gap: 7px; font-weight: 900; color: #334155; }
+.analyst-automotive-park-modal-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 22px; }
+@media (max-width: 1100px) { .analyst-automotive-park-hero { flex-direction: column; align-items: flex-start; } .analyst-automotive-park-toolbar { grid-template-columns: 1fr 1fr; } .analyst-automotive-park-summary { grid-template-columns: 1fr; } }
+@media (max-width: 680px) { .analyst-automotive-park-toolbar, .analyst-automotive-park-detail-grid, .analyst-automotive-park-form-grid { grid-template-columns: 1fr; } .analyst-automotive-park-hero-actions { width: 100%; } .analyst-automotive-park-hero-actions button { flex: 1; } }

@@ -1,0 +1,604 @@
+.admin-data-integration-page { display: grid; gap: 18px; }
+.admin-data-integration-hero { display: flex; justify-content: space-between; gap: 22px; align-items: center; padding: 26px; border-radius: 30px; background: linear-gradient(135deg,#ffffff,#f8fafc); border: 1px solid #e2e8f0; box-shadow: 0 18px 55px rgba(15,23,42,.07); }
+.admin-data-integration-eyebrow { display: inline-flex; padding: 7px 11px; border-radius: 999px; background: color-mix(in srgb, #2563eb 10%, white); color: #2563eb; font-size: 12px; font-weight: 950; text-transform: uppercase; letter-spacing: .09em; }
+.admin-data-integration-hero h2 { margin: 12px 0 8px; font-size: clamp(26px,4vw,42px); color: #0f172a; letter-spacing: -1.2px; }
+.admin-data-integration-hero p { margin: 0; color: #64748b; line-height: 1.7; max-width: 860px; }
+.admin-data-integration-hero-actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
+.admin-data-integration-hero-actions button, .admin-data-integration-row-actions button, .admin-data-integration-modal-actions button { border: 0; border-radius: 14px; padding: 11px 14px; font-weight: 900; background: #2563eb; color: white; box-shadow: 0 12px 28px color-mix(in srgb, #2563eb 22%, transparent); }
+.admin-data-integration-hero-actions button:last-child, .admin-data-integration-modal-actions button:first-child { background: #0f172a; box-shadow: none; }
+.admin-data-integration-toolbar { display: grid; grid-template-columns: minmax(280px, 1.5fr) repeat(2, minmax(150px, 1fr)); gap: 12px; padding: 16px; border-radius: 24px; background: white; border: 1px solid #e2e8f0; box-shadow: 0 10px 30px rgba(15,23,42,.05); }
+.admin-data-integration-toolbar label { display: grid; gap: 7px; color: #334155; font-weight: 900; font-size: 13px; }
+.admin-data-integration-toolbar input, .admin-data-integration-toolbar select, .admin-data-integration-form input { border: 1px solid #dbe3ef; background: #f8fafc; border-radius: 15px; padding: 12px 13px; outline: none; color: #0f172a; }
+.admin-data-integration-toolbar input:focus, .admin-data-integration-toolbar select:focus, .admin-data-integration-form input:focus { border-color: #2563eb; box-shadow: 0 0 0 4px color-mix(in srgb, #2563eb 14%, transparent); background: white; }
+.admin-data-integration-summary { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; }
+.admin-data-integration-summary article { padding: 18px; border-radius: 24px; background: white; border: 1px solid #e2e8f0; display: grid; gap: 4px; }
+.admin-data-integration-summary strong { font-size: 28px; letter-spacing: -.8px; color: #0f172a; }
+.admin-data-integration-summary span { color: #64748b; font-weight: 700; }
+.admin-data-integration-table-card { background: white; border: 1px solid #e2e8f0; border-radius: 28px; overflow: hidden; box-shadow: 0 14px 42px rgba(15,23,42,.06); }
+.admin-data-integration-table-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 20px 22px; border-bottom: 1px solid #e2e8f0; }
+.admin-data-integration-table-head span { color: #2563eb; font-weight: 950; text-transform: uppercase; letter-spacing: .08em; font-size: 12px; }
+.admin-data-integration-table-head h3 { margin: 5px 0 0; font-size: 22px; }
+.admin-data-integration-table-head small { color: #64748b; font-weight: 900; }
+.admin-data-integration-table-wrap { overflow-x: auto; }
+.admin-data-integration-table-wrap table { width: 100%; border-collapse: collapse; min-width: 920px; }
+.admin-data-integration-table-wrap th { text-align: left; padding: 14px 16px; color: #475569; background: #f8fafc; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
+.admin-data-integration-table-wrap td { padding: 14px 16px; border-top: 1px solid #eef2f7; color: #334155; font-weight: 650; vertical-align: middle; }
+.admin-data-integration-table-wrap tr:hover td { background: #f8fafc; }
+.admin-data-integration-row-actions { display: flex; flex-wrap: wrap; gap: 7px; min-width: 220px; }
+.admin-data-integration-row-actions button { padding: 8px 10px; border-radius: 12px; font-size: 12px; box-shadow: none; background: color-mix(in srgb, #2563eb 10%, white); color: #2563eb; border: 1px solid color-mix(in srgb, #2563eb 20%, white); }
+.admin-data-integration-badge { display: inline-flex; align-items: center; padding: 6px 10px; border-radius: 999px; font-size: 12px; font-weight: 950; white-space: nowrap; }
+.admin-data-integration-badge.success { color: #047857; background: #d1fae5; }
+.admin-data-integration-badge.warning { color: #b45309; background: #fef3c7; }
+.admin-data-integration-badge.danger { color: #b91c1c; background: #fee2e2; }
+.admin-data-integration-badge.neutral { color: #475569; background: #f1f5f9; }
+.admin-data-integration-empty { text-align: center; color: #64748b; padding: 34px !important; }
+.admin-data-integration-toast { position: fixed; right: 28px; bottom: 28px; padding: 14px 18px; border-radius: 18px; color: white; background: #0f172a; box-shadow: 0 18px 50px rgba(15,23,42,.28); z-index: 80; font-weight: 900; }
+.admin-data-integration-modal-backdrop { position: fixed; inset: 0; background: rgba(15,23,42,.58); display: grid; place-items: center; padding: 20px; z-index: 50; }
+.admin-data-integration-modal { position: relative; max-width: 760px; max-height: min(760px, 92vh); overflow-y: auto; width: 100%; padding: 28px; background: white; border-radius: 30px; box-shadow: 0 24px 90px rgba(15,23,42,.35); }
+.admin-data-integration-modal h3 { margin: 14px 0 18px; font-size: 28px; letter-spacing: -.8px; }
+.admin-data-integration-close { position: absolute; top: 16px; right: 16px; width: 38px; height: 38px; border-radius: 14px; border: 0; background: #f1f5f9; color: #0f172a; font-size: 24px; }
+.admin-data-integration-detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+.admin-data-integration-detail-grid article { padding: 14px; border-radius: 18px; background: #f8fafc; border: 1px solid #e2e8f0; }
+.admin-data-integration-detail-grid span { display: block; color: #64748b; font-weight: 900; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }
+.admin-data-integration-detail-grid strong { display: block; margin-top: 6px; color: #0f172a; }
+.admin-data-integration-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+.admin-data-integration-form-grid label { display: grid; gap: 7px; font-weight: 900; color: #334155; }
+.admin-data-integration-modal-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 22px; }
+@media (max-width: 1100px) { .admin-data-integration-hero { flex-direction: column; align-items: flex-start; } .admin-data-integration-toolbar { grid-template-columns: 1fr 1fr; } .admin-data-integration-summary { grid-template-columns: 1fr; } }
+@media (max-width: 680px) { .admin-data-integration-toolbar, .admin-data-integration-detail-grid, .admin-data-integration-form-grid { grid-template-columns: 1fr; } .admin-data-integration-hero-actions { width: 100%; } .admin-data-integration-hero-actions button { flex: 1; } }
+
+/* ============================================================
+   RESPONSIVE PROFESIONAL - INTEGRACIÓN DE DATOS
+   Pegar al final del styles.css
+   ============================================================ */
+
+.admin-data-integration-page,
+.admin-data-integration-page * {
+  box-sizing: border-box;
+}
+
+.admin-data-integration-page {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Scroll horizontal elegante para tablas */
+.admin-data-integration-table-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.admin-data-integration-table-wrap::-webkit-scrollbar {
+  height: 8px;
+}
+
+.admin-data-integration-table-wrap::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 999px;
+}
+
+.admin-data-integration-table-wrap::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+
+/* =========================
+   LAPTOP MEDIANA
+   ========================= */
+@media (max-width: 1280px) {
+  .admin-data-integration-hero {
+    padding: 24px;
+  }
+
+  .admin-data-integration-hero h2 {
+    font-size: 36px;
+  }
+
+  .admin-data-integration-toolbar {
+    grid-template-columns: minmax(260px, 1.2fr) repeat(2, minmax(140px, 1fr));
+  }
+
+  .admin-data-integration-table-wrap table {
+    min-width: 860px;
+  }
+}
+
+/* =========================
+   TABLET
+   ========================= */
+@media (max-width: 1024px) {
+  .admin-data-integration-hero {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 22px;
+  }
+
+  .admin-data-integration-hero-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .admin-data-integration-hero-actions button {
+    flex: 1;
+    min-width: 150px;
+  }
+
+  .admin-data-integration-toolbar {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .admin-data-integration-search {
+    grid-column: 1 / -1;
+  }
+
+  .admin-data-integration-summary {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .admin-data-integration-table-card {
+    border-radius: 24px;
+  }
+
+  .admin-data-integration-table-head {
+    align-items: flex-start;
+  }
+
+  .admin-data-integration-table-wrap table {
+    min-width: 820px;
+  }
+
+  .admin-data-integration-modal {
+    max-width: 92vw;
+  }
+}
+
+/* =========================
+   TABLET PEQUEÑA / CELULAR GRANDE
+   ========================= */
+@media (max-width: 768px) {
+  .admin-data-integration-page {
+    gap: 16px;
+  }
+
+  .admin-data-integration-hero {
+    padding: 20px;
+    border-radius: 24px;
+  }
+
+  .admin-data-integration-hero h2 {
+    font-size: 30px;
+    line-height: 1.1;
+    letter-spacing: -0.8px;
+  }
+
+  .admin-data-integration-hero p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .admin-data-integration-toolbar {
+    grid-template-columns: 1fr;
+    padding: 14px;
+    border-radius: 22px;
+  }
+
+  .admin-data-integration-toolbar input,
+  .admin-data-integration-toolbar select,
+  .admin-data-integration-form input,
+  .admin-data-integration-form select {
+    width: 100%;
+    min-height: 44px;
+  }
+
+  .admin-data-integration-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-data-integration-summary article {
+    padding: 16px;
+    border-radius: 20px;
+  }
+
+  .admin-data-integration-summary strong {
+    font-size: 24px;
+  }
+
+  .admin-data-integration-table-head {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 18px;
+  }
+
+  .admin-data-integration-table-head h3 {
+    font-size: 20px;
+  }
+
+  .admin-data-integration-table-wrap table {
+    min-width: 760px;
+  }
+
+  .admin-data-integration-table-wrap th,
+  .admin-data-integration-table-wrap td {
+    padding: 12px 14px;
+    font-size: 13px;
+  }
+
+  .admin-data-integration-row-actions {
+    min-width: 190px;
+  }
+
+  .admin-data-integration-row-actions button {
+    padding: 8px 9px;
+    font-size: 11px;
+  }
+
+  .admin-data-integration-modal {
+    max-width: 94vw;
+    padding: 24px;
+    border-radius: 24px;
+  }
+
+  .admin-data-integration-modal h3 {
+    font-size: 24px;
+  }
+
+  .admin-data-integration-detail-grid,
+  .admin-data-integration-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-data-integration-modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .admin-data-integration-modal-actions button {
+    width: 100%;
+  }
+}
+
+/* =========================
+   CELULAR
+   ========================= */
+@media (max-width: 560px) {
+  .admin-data-integration-page {
+    gap: 14px;
+  }
+
+  .admin-data-integration-hero {
+    padding: 18px;
+    border-radius: 22px;
+  }
+
+  .admin-data-integration-eyebrow {
+    font-size: 10px;
+    padding: 7px 10px;
+  }
+
+  .admin-data-integration-hero h2 {
+    font-size: 26px;
+  }
+
+  .admin-data-integration-hero-actions {
+    flex-direction: column;
+  }
+
+  .admin-data-integration-hero-actions button {
+    width: 100%;
+  }
+
+  .admin-data-integration-toolbar {
+    padding: 12px;
+    border-radius: 20px;
+  }
+
+  .admin-data-integration-summary article {
+    padding: 14px;
+  }
+
+  .admin-data-integration-table-card {
+    border-radius: 22px;
+  }
+
+  .admin-data-integration-table-head {
+    padding: 16px;
+  }
+
+  .admin-data-integration-table-head h3 {
+    font-size: 18px;
+  }
+
+  .admin-data-integration-table-wrap table {
+    min-width: 720px;
+  }
+
+  .admin-data-integration-table-wrap th {
+    font-size: 11px;
+    padding: 11px 12px;
+  }
+
+  .admin-data-integration-table-wrap td {
+    padding: 11px 12px;
+    font-size: 12.5px;
+  }
+
+  .admin-data-integration-badge {
+    font-size: 11px;
+    padding: 5px 9px;
+  }
+
+  .admin-data-integration-row-actions {
+    gap: 6px;
+    min-width: 170px;
+  }
+
+  .admin-data-integration-row-actions button {
+    border-radius: 10px;
+    padding: 7px 8px;
+    font-size: 10.5px;
+  }
+
+  .admin-data-integration-modal-backdrop {
+    padding: 12px;
+    align-items: end;
+  }
+
+  .admin-data-integration-modal {
+    max-width: 100%;
+    max-height: 88vh;
+    padding: 22px;
+    border-radius: 24px 24px 0 0;
+  }
+
+  .admin-data-integration-close {
+    top: 12px;
+    right: 12px;
+    width: 34px;
+    height: 34px;
+    border-radius: 12px;
+    font-size: 22px;
+  }
+
+  .admin-data-integration-detail-grid article {
+    padding: 12px;
+    border-radius: 16px;
+  }
+
+  .admin-data-integration-form-grid label {
+    font-size: 13px;
+  }
+
+  .admin-data-integration-toast {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    text-align: center;
+    border-radius: 16px;
+  }
+}
+
+/* =========================
+   CELULAR MUY PEQUEÑO
+   ========================= */
+@media (max-width: 390px) {
+  .admin-data-integration-hero h2 {
+    font-size: 23px;
+  }
+
+  .admin-data-integration-hero p {
+    font-size: 13px;
+  }
+
+  .admin-data-integration-table-wrap table {
+    min-width: 680px;
+  }
+
+  .admin-data-integration-modal {
+    padding: 20px;
+  }
+
+  .admin-data-integration-modal h3 {
+    font-size: 22px;
+  }
+}
+
+
+/* ============================================================
+   SIMULACIÓN SUNARP - INTEGRACIÓN DE DATOS ADMINISTRADOR
+   ============================================================ */
+
+.admin-data-integration-sunarp-btn {
+  background: linear-gradient(135deg, #16a34a, #059669) !important;
+  box-shadow: 0 12px 28px rgba(22, 163, 74, 0.24) !important;
+}
+
+.admin-data-integration-sunarp-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.admin-sunarp-simulation-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.8fr);
+  gap: 18px;
+  align-items: stretch;
+  padding: 22px;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top left, rgba(22, 163, 74, 0.14), transparent 34%),
+    linear-gradient(135deg, #ffffff, #f8fafc);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 14px 42px rgba(15, 23, 42, 0.06);
+}
+
+.admin-sunarp-simulation-card > div:first-child span {
+  display: inline-flex;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: #ecfdf5;
+  color: #16a34a;
+  font-size: 12px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.admin-sunarp-simulation-card h3 {
+  margin: 12px 0 8px;
+  color: #0f172a;
+  font-size: 26px;
+  letter-spacing: -0.7px;
+}
+
+.admin-sunarp-simulation-card p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+.admin-sunarp-simulation-card p strong {
+  color: #0f172a;
+}
+
+.admin-sunarp-status {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.admin-sunarp-status article {
+  display: grid;
+  gap: 6px;
+  align-content: center;
+  padding: 16px;
+  border-radius: 22px;
+  background: white;
+  border: 1px solid #e2e8f0;
+}
+
+.admin-sunarp-status strong {
+  color: #0f172a;
+  font-size: 22px;
+  letter-spacing: -0.5px;
+}
+
+.admin-sunarp-status span {
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.admin-sunarp-sync-modal p {
+  margin: -8px 0 18px;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+.admin-sunarp-progress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 18px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 14px;
+}
+
+.admin-sunarp-progress strong {
+  color: #0f172a;
+}
+
+.admin-sunarp-spinner {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  border: 3px solid #dbeafe;
+  border-top-color: #2563eb;
+  animation: adminSunarpSpin 0.8s linear infinite;
+}
+
+@keyframes adminSunarpSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.admin-sunarp-log-list {
+  display: grid;
+  gap: 9px;
+}
+
+.admin-sunarp-log-list article {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 12px;
+  border-radius: 16px;
+  background: #ecfdf5;
+  border: 1px solid #bbf7d0;
+}
+
+.admin-sunarp-log-list article span {
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  background: #16a34a;
+  color: white;
+  font-size: 12px;
+  font-weight: 950;
+}
+
+.admin-sunarp-log-list article p {
+  margin: 2px 0 0;
+  color: #0f172a;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+/* Responsive SUNARP */
+
+@media (max-width: 1100px) {
+  .admin-sunarp-simulation-card {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-sunarp-status {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .admin-sunarp-simulation-card {
+    padding: 18px;
+    border-radius: 24px;
+  }
+
+  .admin-sunarp-status {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-sunarp-simulation-card h3 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 560px) {
+  .admin-sunarp-simulation-card {
+    padding: 16px;
+    border-radius: 22px;
+  }
+
+  .admin-sunarp-sync-modal {
+    max-width: 100%;
+    max-height: 88vh;
+    border-radius: 24px 24px 0 0;
+  }
+}

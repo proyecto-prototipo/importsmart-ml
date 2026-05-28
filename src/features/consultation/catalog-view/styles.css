@@ -1,0 +1,2121 @@
+/* ============================================================
+   MARKETPLACE - USUARIO CONSULTA
+   Pegar al final del styles.css
+   ============================================================ */
+
+.consultation-catalog-view-page,
+.consultation-catalog-view-page * {
+  box-sizing: border-box;
+}
+
+.consultation-catalog-view-page {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.consultation-marketplace {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 28px;
+  padding: 20px;
+  box-shadow: 0 14px 42px rgba(15, 23, 42, 0.06);
+}
+
+.consultation-marketplace-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.consultation-marketplace-head span {
+  color: #16a34a;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 12px;
+}
+
+.consultation-marketplace-head h3 {
+  margin: 5px 0 0;
+  font-size: 24px;
+  color: #0f172a;
+  letter-spacing: -0.5px;
+}
+
+.consultation-marketplace-head small {
+  color: #64748b;
+  font-weight: 900;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 8px 11px;
+  border-radius: 999px;
+}
+
+.consultation-marketplace-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.consultation-product-card {
+  overflow: hidden;
+  border-radius: 24px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.06);
+  transition: 0.2s ease;
+}
+
+.consultation-product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 45px rgba(15, 23, 42, 0.11);
+}
+
+.consultation-product-image {
+  position: relative;
+  height: 210px;
+  overflow: hidden;
+  background: #0f172a;
+}
+
+.consultation-product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.consultation-product-floating {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  top: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.consultation-product-floating span {
+  display: inline-flex;
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: white;
+  background: rgba(15, 23, 42, 0.68);
+  backdrop-filter: blur(10px);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.consultation-image-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 999px;
+  color: #0f172a;
+  background: rgba(255, 255, 255, 0.92);
+  font-size: 25px;
+  font-weight: 900;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: 0.2s ease;
+}
+
+.consultation-product-card:hover .consultation-image-arrow {
+  opacity: 1;
+}
+
+.consultation-image-arrow.left {
+  left: 12px;
+}
+
+.consultation-image-arrow.right {
+  right: 12px;
+}
+
+.consultation-product-body {
+  padding: 16px;
+}
+
+.consultation-product-title {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.consultation-product-title span {
+  color: #16a34a;
+  font-size: 12px;
+  font-weight: 950;
+}
+
+.consultation-product-title h3 {
+  margin: 4px 0 0;
+  color: #0f172a;
+  font-size: 18px;
+  line-height: 1.2;
+  letter-spacing: -0.4px;
+}
+
+.consultation-product-title > strong {
+  color: #0f172a;
+  background: #f1f5f9;
+  padding: 8px 10px;
+  border-radius: 13px;
+  white-space: nowrap;
+}
+
+.consultation-product-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 13px;
+}
+
+.consultation-product-tags span {
+  padding: 6px 9px;
+  border-radius: 999px;
+  color: #475569;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.consultation-product-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 9px;
+  margin-top: 14px;
+}
+
+.consultation-product-info article {
+  padding: 11px;
+  border-radius: 16px;
+  background: #f8fafc;
+  border: 1px solid #eef2f7;
+}
+
+.consultation-product-info article span {
+  display: block;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.consultation-product-info article strong {
+  display: block;
+  margin-top: 4px;
+  color: #0f172a;
+  font-size: 13px;
+}
+
+.consultation-product-actions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  padding: 0 16px 16px;
+}
+
+.consultation-product-actions button {
+  border: 1px solid color-mix(in srgb, #16a34a 22%, white);
+  border-radius: 13px;
+  padding: 9px 10px;
+  background: color-mix(in srgb, #16a34a 9%, white);
+  color: #16a34a;
+  font-size: 12px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.consultation-product-actions button.primary {
+  grid-column: 1 / -1;
+  background: #16a34a;
+  color: white;
+  box-shadow: 0 12px 24px rgba(22, 163, 74, 0.22);
+}
+
+.consultation-product-actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.58;
+  background: #e2e8f0;
+  color: #64748b;
+  border-color: #e2e8f0;
+  box-shadow: none;
+}
+
+.consultation-empty-marketplace {
+  grid-column: 1 / -1;
+  display: grid;
+  place-items: center;
+  gap: 5px;
+  min-height: 170px;
+  border-radius: 22px;
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  color: #64748b;
+}
+
+.consultation-empty-marketplace strong {
+  color: #0f172a;
+}
+
+/* ================= GALERÍA ================= */
+
+.consultation-gallery-modal,
+.consultation-cart-modal {
+  position: relative;
+  width: 100%;
+  background: white;
+  border-radius: 30px;
+  box-shadow: 0 24px 90px rgba(15, 23, 42, 0.35);
+}
+
+.consultation-gallery-modal {
+  max-width: 980px;
+  max-height: 92vh;
+  overflow: hidden;
+  padding: 24px;
+}
+
+.consultation-gallery-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding-right: 52px;
+  margin-bottom: 16px;
+}
+
+.consultation-gallery-header h3 {
+  margin: 14px 0 5px;
+  font-size: 28px;
+  color: #0f172a;
+}
+
+.consultation-gallery-header p {
+  margin: 0;
+  color: #64748b;
+  font-weight: 700;
+}
+
+.consultation-gallery-header small {
+  align-self: start;
+  padding: 8px 11px;
+  border-radius: 999px;
+  background: #f8fafc;
+  color: #334155;
+  border: 1px solid #e2e8f0;
+  font-weight: 900;
+}
+
+.consultation-gallery-viewer {
+  position: relative;
+  height: min(58vh, 560px);
+  overflow: hidden;
+  border-radius: 24px;
+  background: #020617;
+}
+
+.consultation-gallery-viewer img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.consultation-gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #0f172a;
+  font-size: 32px;
+  font-weight: 900;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.consultation-gallery-arrow.left {
+  left: 16px;
+}
+
+.consultation-gallery-arrow.right {
+  right: 16px;
+}
+
+.consultation-gallery-thumbs {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-top: 14px;
+}
+
+.consultation-gallery-thumbs button {
+  width: 88px;
+  height: 64px;
+  flex: 0 0 auto;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #f1f5f9;
+  cursor: pointer;
+}
+
+.consultation-gallery-thumbs button.active {
+  border-color: #16a34a;
+}
+
+.consultation-gallery-thumbs img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ================= CARRITO ================= */
+
+.consultation-cart-modal {
+  max-width: 760px;
+  max-height: min(820px, 92vh);
+  overflow-y: auto;
+  padding: 28px;
+}
+
+.consultation-cart-modal h3 {
+  margin: 14px 0 18px;
+  font-size: 28px;
+  color: #0f172a;
+}
+
+.consultation-cart-list {
+  display: grid;
+  gap: 12px;
+}
+
+.consultation-cart-item {
+  display: grid;
+  grid-template-columns: 74px 1fr auto auto;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  border-radius: 18px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.consultation-cart-item img {
+  width: 74px;
+  height: 62px;
+  border-radius: 14px;
+  object-fit: cover;
+  background: #0f172a;
+}
+
+.consultation-cart-item strong,
+.consultation-cart-item span,
+.consultation-cart-item small {
+  display: block;
+}
+
+.consultation-cart-item span {
+  margin-top: 3px;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.consultation-cart-item small {
+  margin-top: 4px;
+  color: #16a34a;
+  font-weight: 900;
+}
+
+.consultation-cart-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.consultation-cart-controls button {
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 10px;
+  background: #16a34a;
+  color: white;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.consultation-cart-remove {
+  border: 0;
+  border-radius: 12px;
+  padding: 8px 10px;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.consultation-cart-empty {
+  display: grid;
+  gap: 4px;
+  place-items: center;
+  min-height: 130px;
+  border-radius: 18px;
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  color: #64748b;
+}
+
+.consultation-cart-empty strong {
+  color: #0f172a;
+}
+
+.consultation-cart-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18px;
+  padding: 16px;
+  border-radius: 20px;
+  background: #ecfdf5;
+  border: 1px solid #bbf7d0;
+}
+
+.consultation-cart-total span {
+  color: #047857;
+  font-weight: 900;
+}
+
+.consultation-cart-total strong {
+  color: #0f172a;
+  font-size: 24px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1280px) {
+  .consultation-marketplace-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1024px) {
+  .consultation-marketplace {
+    padding: 18px;
+    border-radius: 24px;
+  }
+
+  .consultation-product-image {
+    height: 200px;
+  }
+
+  .consultation-gallery-modal,
+  .consultation-cart-modal {
+    max-width: 92vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .consultation-marketplace {
+    padding: 16px;
+    border-radius: 22px;
+  }
+
+  .consultation-marketplace-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .consultation-marketplace-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .consultation-product-image {
+    height: 230px;
+  }
+
+  .consultation-image-arrow {
+    opacity: 1;
+  }
+
+  .consultation-product-info {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .consultation-product-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .consultation-gallery-modal,
+  .consultation-cart-modal {
+    max-width: 94vw;
+    padding: 24px;
+    border-radius: 24px;
+  }
+
+  .consultation-gallery-viewer {
+    height: 420px;
+  }
+
+  .consultation-cart-item {
+    grid-template-columns: 64px 1fr;
+  }
+
+  .consultation-cart-controls,
+  .consultation-cart-remove {
+    grid-column: 1 / -1;
+  }
+
+  .consultation-cart-controls {
+    justify-content: center;
+  }
+
+  .consultation-cart-remove {
+    width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .consultation-product-image {
+    height: 210px;
+  }
+
+  .consultation-product-title {
+    flex-direction: column;
+  }
+
+  .consultation-product-title > strong {
+    width: 100%;
+    text-align: center;
+  }
+
+  .consultation-product-info {
+    grid-template-columns: 1fr;
+  }
+
+  .consultation-product-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .consultation-gallery-modal,
+  .consultation-cart-modal {
+    max-width: 100%;
+    max-height: 88vh;
+    padding: 22px;
+    border-radius: 24px 24px 0 0;
+  }
+
+  .consultation-catalog-view-modal-backdrop {
+    padding: 12px;
+    align-items: end;
+  }
+
+  .consultation-gallery-header {
+    flex-direction: column;
+    padding-right: 42px;
+  }
+
+  .consultation-gallery-header h3,
+  .consultation-cart-modal h3 {
+    font-size: 22px;
+  }
+
+  .consultation-gallery-viewer {
+    height: 330px;
+    border-radius: 18px;
+  }
+
+  .consultation-gallery-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 25px;
+  }
+
+  .consultation-gallery-thumbs button {
+    width: 72px;
+    height: 54px;
+  }
+
+  .consultation-cart-total {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+/* ============================================================
+   CABECERA PROFESIONAL - CATÁLOGO USUARIO CONSULTA
+   ============================================================ */
+
+.consultation-catalog-view-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 240px auto;
+  gap: 18px;
+  align-items: stretch;
+  padding: 28px;
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at top left, color-mix(in srgb, #16a34a 16%, transparent), transparent 34%),
+    linear-gradient(135deg, #ffffff, #f8fafc);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 18px 55px rgba(15, 23, 42, 0.08);
+}
+
+.consultation-hero-content {
+  min-width: 0;
+}
+
+.consultation-catalog-view-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: color-mix(in srgb, #16a34a 12%, white);
+  color: #16a34a;
+  font-size: 12px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+.consultation-catalog-view-eyebrow::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #16a34a;
+  box-shadow: 0 0 0 5px color-mix(in srgb, #16a34a 14%, transparent);
+}
+
+.consultation-catalog-view-hero h2 {
+  margin: 16px 0 10px;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.02;
+  color: #0f172a;
+  letter-spacing: -1.4px;
+}
+
+.consultation-catalog-view-hero p {
+  margin: 0;
+  max-width: 760px;
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.consultation-hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 18px;
+}
+
+.consultation-hero-tags span {
+  display: inline-flex;
+  padding: 8px 11px;
+  border-radius: 999px;
+  color: #166534;
+  background: #ecfdf5;
+  border: 1px solid #bbf7d0;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.consultation-hero-cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 24px;
+  background: #0f172a;
+  color: white;
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.18);
+}
+
+.consultation-hero-cart span {
+  display: block;
+  color: #86efac;
+  font-size: 12px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.consultation-hero-cart strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 38px;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.consultation-hero-cart p {
+  margin: 7px 0 0;
+  color: #cbd5e1;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.consultation-hero-cart button {
+  width: 100%;
+  border: 0;
+  border-radius: 16px;
+  padding: 12px 14px;
+  color: #0f172a;
+  background: white;
+  font-weight: 950;
+  cursor: pointer;
+}
+
+.consultation-catalog-view-hero-actions {
+  display: flex;
+  align-items: end;
+  justify-content: flex-end;
+}
+
+.consultation-catalog-view-hero-actions button {
+  border: 0;
+  border-radius: 16px;
+  padding: 13px 16px;
+  color: white;
+  background: #16a34a;
+  font-weight: 950;
+  cursor: pointer;
+  box-shadow: 0 14px 30px rgba(22, 163, 74, 0.22);
+}
+
+/* Toolbar moderna */
+
+.consultation-catalog-view-toolbar {
+  display: grid;
+  grid-template-columns: minmax(300px, 1.4fr) repeat(3, minmax(150px, 1fr));
+  gap: 12px;
+  padding: 16px;
+  border-radius: 26px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 12px 34px rgba(15, 23, 42, 0.06);
+}
+
+.consultation-catalog-view-toolbar label {
+  display: grid;
+  gap: 7px;
+  color: #334155;
+  font-weight: 900;
+  font-size: 13px;
+}
+
+.consultation-catalog-view-toolbar label > span {
+  color: #334155;
+  font-size: 12px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.consultation-catalog-view-toolbar input,
+.consultation-catalog-view-toolbar select {
+  width: 100%;
+  min-height: 46px;
+  border: 1px solid #dbe3ef;
+  background: #f8fafc;
+  border-radius: 16px;
+  padding: 12px 14px;
+  outline: none;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.consultation-catalog-view-toolbar input:focus,
+.consultation-catalog-view-toolbar select:focus {
+  border-color: #16a34a;
+  box-shadow: 0 0 0 4px color-mix(in srgb, #16a34a 14%, transparent);
+  background: white;
+}
+
+/* Resumen tipo cards */
+
+.consultation-catalog-view-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.consultation-catalog-view-summary article {
+  position: relative;
+  overflow: hidden;
+  padding: 18px;
+  border-radius: 24px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 12px 34px rgba(15, 23, 42, 0.05);
+}
+
+.consultation-catalog-view-summary article::after {
+  content: "";
+  position: absolute;
+  right: -26px;
+  top: -26px;
+  width: 82px;
+  height: 82px;
+  border-radius: 999px;
+  background: color-mix(in srgb, #16a34a 12%, transparent);
+}
+
+.consultation-catalog-view-summary span {
+  display: block;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.consultation-catalog-view-summary strong {
+  display: block;
+  margin-top: 8px;
+  color: #0f172a;
+  font-size: 32px;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.consultation-catalog-view-summary small {
+  display: block;
+  margin-top: 6px;
+  color: #64748b;
+  font-weight: 800;
+}
+
+/* Responsive */
+
+@media (max-width: 1180px) {
+  .consultation-catalog-view-hero {
+    grid-template-columns: 1fr 220px;
+  }
+
+  .consultation-catalog-view-hero-actions {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+  }
+
+  .consultation-catalog-view-hero-actions button {
+    min-width: 180px;
+  }
+
+  .consultation-catalog-view-toolbar {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .consultation-catalog-view-search {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 780px) {
+  .consultation-catalog-view-hero {
+    grid-template-columns: 1fr;
+    padding: 22px;
+    border-radius: 24px;
+  }
+
+  .consultation-catalog-view-hero h2 {
+    font-size: 32px;
+  }
+
+  .consultation-hero-cart {
+    border-radius: 22px;
+  }
+
+  .consultation-catalog-view-hero-actions {
+    justify-content: stretch;
+  }
+
+  .consultation-catalog-view-hero-actions button {
+    width: 100%;
+  }
+
+  .consultation-catalog-view-toolbar {
+    grid-template-columns: 1fr;
+    padding: 14px;
+    border-radius: 22px;
+  }
+
+  .consultation-catalog-view-summary {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .consultation-catalog-view-hero {
+    padding: 18px;
+    border-radius: 22px;
+  }
+
+  .consultation-catalog-view-hero h2 {
+    font-size: 27px;
+  }
+
+  .consultation-catalog-view-hero p {
+    font-size: 14px;
+  }
+
+  .consultation-hero-tags {
+    gap: 7px;
+  }
+
+  .consultation-hero-tags span {
+    font-size: 11px;
+    padding: 7px 9px;
+  }
+
+  .consultation-hero-cart strong {
+    font-size: 32px;
+  }
+
+  .consultation-catalog-view-summary article {
+    padding: 16px;
+    border-radius: 20px;
+  }
+}
+
+/* ============================================================
+   CARRITO LATERAL MODERNO - USUARIO CONSULTA
+   Pegar al final del styles.css
+   ============================================================ */
+
+.consultation-cart-backdrop {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 9999 !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: stretch !important;
+  background: rgba(15, 23, 42, 0.55) !important;
+  backdrop-filter: blur(5px);
+}
+
+.consultation-cart-drawer {
+  width: min(460px, 94vw);
+  height: 100vh;
+  background: #ffffff;
+  border-radius: 28px 0 0 28px;
+  box-shadow: -28px 0 90px rgba(15, 23, 42, 0.35);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  overflow: hidden;
+  animation: consultationCartSlideIn 0.24s ease;
+}
+
+@keyframes consultationCartSlideIn {
+  from {
+    transform: translateX(105%);
+    opacity: 0.4;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.consultation-cart-drawer-header {
+  position: relative;
+  padding: 26px 26px 20px;
+  border-bottom: 1px solid #e2e8f0;
+  background:
+    radial-gradient(circle at top left, rgba(22, 163, 74, 0.18), transparent 38%),
+    linear-gradient(135deg, #ffffff, #f8fafc);
+}
+
+.consultation-cart-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: #ecfdf5;
+  color: #16a34a;
+  font-size: 11px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.consultation-cart-eyebrow::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #16a34a;
+  box-shadow: 0 0 0 5px rgba(22, 163, 74, 0.14);
+}
+
+.consultation-cart-drawer-header h3 {
+  margin: 14px 46px 6px 0;
+  color: #0f172a;
+  font-size: 28px;
+  line-height: 1.08;
+  letter-spacing: -0.8px;
+}
+
+.consultation-cart-drawer-header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.consultation-cart-close {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 14px;
+  background: #0f172a;
+  color: white;
+  font-size: 24px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.consultation-cart-close:hover {
+  background: #1e293b;
+}
+
+.consultation-cart-drawer-content {
+  padding: 18px;
+  overflow-y: auto;
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  background: #f8fafc;
+}
+
+.consultation-cart-drawer-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.consultation-cart-drawer-content::-webkit-scrollbar-track {
+  background: #eef2f7;
+}
+
+.consultation-cart-drawer-content::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+
+.consultation-cart-drawer-item {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr);
+  gap: 12px;
+  padding: 13px;
+  border-radius: 20px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+}
+
+.consultation-cart-drawer-item img {
+  width: 76px;
+  height: 76px;
+  border-radius: 16px;
+  object-fit: cover;
+  background: #0f172a;
+  grid-row: span 3;
+}
+
+.consultation-cart-drawer-info {
+  min-width: 0;
+}
+
+.consultation-cart-drawer-info strong {
+  display: block;
+  color: #0f172a;
+  font-size: 15px;
+  line-height: 1.25;
+}
+
+.consultation-cart-drawer-info span {
+  display: block;
+  margin-top: 4px;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.consultation-cart-drawer-info small {
+  display: inline-flex;
+  margin-top: 8px;
+  padding: 6px 9px;
+  border-radius: 999px;
+  color: #047857;
+  background: #ecfdf5;
+  font-size: 12px;
+  font-weight: 950;
+}
+
+.consultation-cart-drawer-controls {
+  grid-column: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  gap: 8px;
+  padding: 6px;
+  border-radius: 14px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.consultation-cart-drawer-controls button {
+  width: 31px;
+  height: 31px;
+  border: 0;
+  border-radius: 10px;
+  background: #16a34a;
+  color: white;
+  font-size: 18px;
+  font-weight: 950;
+  cursor: pointer;
+}
+
+.consultation-cart-drawer-controls button:hover {
+  background: #15803d;
+}
+
+.consultation-cart-drawer-controls strong {
+  min-width: 22px;
+  text-align: center;
+  color: #0f172a;
+  font-size: 14px;
+}
+
+.consultation-cart-drawer-remove {
+  grid-column: 2;
+  justify-self: start;
+  border: 0;
+  border-radius: 12px;
+  padding: 8px 11px;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 12px;
+  font-weight: 950;
+  cursor: pointer;
+}
+
+.consultation-cart-drawer-remove:hover {
+  background: #fee2e2;
+}
+
+.consultation-cart-empty-state {
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  gap: 8px;
+  padding: 34px 20px;
+  border-radius: 24px;
+  background: white;
+  border: 1px dashed #cbd5e1;
+}
+
+.consultation-cart-empty-icon {
+  width: 68px;
+  height: 68px;
+  display: grid;
+  place-items: center;
+  border-radius: 22px;
+  background: #ecfdf5;
+  font-size: 32px;
+}
+
+.consultation-cart-empty-state strong {
+  color: #0f172a;
+  font-size: 18px;
+}
+
+.consultation-cart-empty-state span {
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.consultation-cart-empty-state button {
+  margin-top: 8px;
+  border: 0;
+  border-radius: 14px;
+  padding: 11px 14px;
+  background: #16a34a;
+  color: white;
+  font-weight: 950;
+  cursor: pointer;
+}
+
+.consultation-cart-drawer-footer {
+  padding: 18px;
+  border-top: 1px solid #e2e8f0;
+  background: white;
+}
+
+.consultation-cart-total-box {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: center;
+  padding: 16px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #ecfdf5, #f0fdf4);
+  border: 1px solid #bbf7d0;
+}
+
+.consultation-cart-total-box span {
+  display: block;
+  color: #047857;
+  font-size: 12px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.consultation-cart-total-box small {
+  display: block;
+  margin-top: 4px;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+.consultation-cart-total-box strong {
+  color: #0f172a;
+  font-size: 25px;
+  letter-spacing: -0.8px;
+  white-space: nowrap;
+}
+
+.consultation-cart-footer-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.consultation-cart-footer-actions button {
+  min-height: 44px;
+  border: 0;
+  border-radius: 15px;
+  padding: 11px 13px;
+  font-weight: 950;
+  cursor: pointer;
+}
+
+.consultation-cart-footer-actions button.secondary {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.consultation-cart-footer-actions button.secondary:hover {
+  background: #e2e8f0;
+}
+
+.consultation-cart-footer-actions button.danger {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.consultation-cart-footer-actions button.primary {
+  grid-column: 1 / -1;
+  color: white;
+  background: #16a34a;
+  box-shadow: 0 14px 26px rgba(22, 163, 74, 0.24);
+}
+
+.consultation-cart-footer-actions button.primary:hover {
+  background: #15803d;
+}
+
+.consultation-cart-footer-actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  box-shadow: none;
+}
+
+/* Responsive carrito lateral */
+
+@media (max-width: 640px) {
+  .consultation-cart-backdrop {
+    align-items: end !important;
+  }
+
+  .consultation-cart-drawer {
+    width: 100%;
+    height: 88vh;
+    border-radius: 28px 28px 0 0;
+    animation: consultationCartSlideUp 0.24s ease;
+  }
+
+  @keyframes consultationCartSlideUp {
+    from {
+      transform: translateY(105%);
+      opacity: 0.4;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .consultation-cart-drawer-header {
+    padding: 22px 20px 16px;
+  }
+
+  .consultation-cart-drawer-header h3 {
+    font-size: 24px;
+  }
+
+  .consultation-cart-close {
+    top: 18px;
+    right: 18px;
+  }
+
+  .consultation-cart-drawer-content {
+    padding: 14px;
+  }
+
+  .consultation-cart-drawer-item {
+    grid-template-columns: 68px minmax(0, 1fr);
+    border-radius: 18px;
+  }
+
+  .consultation-cart-drawer-item img {
+    width: 68px;
+    height: 68px;
+  }
+
+  .consultation-cart-total-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .consultation-cart-total-box strong {
+    font-size: 24px;
+  }
+
+  .consultation-cart-footer-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .consultation-cart-footer-actions button.primary {
+    grid-column: auto;
+  }
+}
+
+/* ============================================================
+   DETALLE + GALERÍA RESPONSIVE - USUARIO CONSULTA
+   Misma experiencia visual del Catálogo Administrador
+   ============================================================ */
+
+.consultation-catalog-view-modal-backdrop {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 9999 !important;
+  display: grid !important;
+  place-items: center !important;
+  padding: 20px !important;
+  background: rgba(15, 23, 42, 0.62) !important;
+  backdrop-filter: blur(5px);
+}
+
+.consultation-detail-modal,
+.consultation-gallery-modal {
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 30px;
+  box-shadow: 0 24px 90px rgba(15, 23, 42, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+}
+
+.consultation-detail-modal {
+  max-width: 980px;
+  max-height: 92vh;
+  overflow-y: auto;
+  padding: 28px;
+}
+
+.consultation-gallery-modal {
+  max-width: 980px;
+  max-height: 92vh;
+  overflow: hidden;
+  padding: 24px;
+}
+
+.consultation-catalog-view-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 8;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 14px;
+  background: #f1f5f9;
+  color: #0f172a;
+  font-size: 24px;
+  font-weight: 950;
+  cursor: pointer;
+}
+
+.consultation-catalog-view-close:hover {
+  background: #e2e8f0;
+}
+
+.consultation-detail-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: flex-start;
+  padding-right: 52px;
+  margin-bottom: 18px;
+}
+
+.consultation-detail-header h3,
+.consultation-gallery-header h3 {
+  margin: 14px 0 5px;
+  color: #0f172a;
+  font-size: 30px;
+  line-height: 1.08;
+  letter-spacing: -0.8px;
+}
+
+.consultation-detail-header p,
+.consultation-gallery-header p {
+  margin: 0;
+  color: #64748b;
+  font-weight: 700;
+}
+
+.consultation-detail-price {
+  display: inline-flex;
+  padding: 12px 14px;
+  border-radius: 16px;
+  color: #0f172a;
+  background: #f1f5f9;
+  font-size: 18px;
+  white-space: nowrap;
+}
+
+.consultation-detail-content {
+  display: grid;
+  grid-template-columns: 340px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.consultation-detail-image-box {
+  height: 350px;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #0f172a;
+  border: 1px solid #e2e8f0;
+}
+
+.consultation-detail-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.consultation-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.consultation-detail-grid article {
+  padding: 14px;
+  border-radius: 18px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.consultation-detail-grid article span {
+  display: block;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.consultation-detail-grid article strong {
+  display: block;
+  margin-top: 6px;
+  color: #0f172a;
+  font-size: 15px;
+}
+
+.consultation-detail-actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.consultation-detail-actions button {
+  border: 0;
+  border-radius: 15px;
+  padding: 12px 15px;
+  background: #e2e8f0;
+  color: #0f172a;
+  font-weight: 950;
+  cursor: pointer;
+}
+
+.consultation-detail-actions button.primary {
+  color: #ffffff;
+  background: #16a34a;
+  box-shadow: 0 14px 28px rgba(22, 163, 74, 0.24);
+}
+
+/* ================= GALERÍA ================= */
+
+.consultation-gallery-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding-right: 52px;
+  margin-bottom: 16px;
+}
+
+.consultation-gallery-header small {
+  align-self: start;
+  padding: 8px 11px;
+  border-radius: 999px;
+  color: #334155;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  font-weight: 900;
+}
+
+.consultation-gallery-viewer {
+  position: relative;
+  height: min(58vh, 560px);
+  overflow: hidden;
+  border-radius: 24px;
+  background: #020617;
+}
+
+.consultation-gallery-viewer img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.consultation-gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #0f172a;
+  font-size: 32px;
+  font-weight: 950;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.consultation-gallery-arrow.left {
+  left: 16px;
+}
+
+.consultation-gallery-arrow.right {
+  right: 16px;
+}
+
+.consultation-gallery-thumbs {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-top: 14px;
+}
+
+.consultation-gallery-thumbs button {
+  width: 88px;
+  height: 64px;
+  flex: 0 0 auto;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #f1f5f9;
+  cursor: pointer;
+}
+
+.consultation-gallery-thumbs button.active {
+  border-color: #16a34a;
+}
+
+.consultation-gallery-thumbs img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .consultation-detail-content {
+    grid-template-columns: 1fr;
+  }
+
+  .consultation-detail-image-box {
+    height: 310px;
+  }
+
+  .consultation-detail-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .consultation-detail-header {
+    flex-direction: column;
+  }
+
+  .consultation-detail-price {
+    width: fit-content;
+  }
+}
+
+@media (max-width: 640px) {
+  .consultation-catalog-view-modal-backdrop {
+    align-items: end !important;
+    padding: 12px !important;
+  }
+
+  .consultation-detail-modal,
+  .consultation-gallery-modal {
+    max-width: 100%;
+    max-height: 88vh;
+    padding: 22px;
+    border-radius: 24px 24px 0 0;
+  }
+
+  .consultation-detail-header,
+  .consultation-gallery-header {
+    flex-direction: column;
+    padding-right: 44px;
+  }
+
+  .consultation-detail-header h3,
+  .consultation-gallery-header h3 {
+    font-size: 23px;
+  }
+
+  .consultation-detail-image-box {
+    height: 240px;
+    border-radius: 20px;
+  }
+
+  .consultation-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .consultation-detail-actions {
+    flex-direction: column-reverse;
+  }
+
+  .consultation-detail-actions button {
+    width: 100%;
+  }
+
+  .consultation-gallery-viewer {
+    height: 330px;
+    border-radius: 18px;
+  }
+
+  .consultation-gallery-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 25px;
+  }
+
+  .consultation-gallery-arrow.left {
+    left: 10px;
+  }
+
+  .consultation-gallery-arrow.right {
+    right: 10px;
+  }
+
+  .consultation-gallery-thumbs button {
+    width: 72px;
+    height: 54px;
+    border-radius: 12px;
+  }
+}
+
+.consultation-catalog-view-toast {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 99999;
+  padding: 14px 18px;
+  border-radius: 18px;
+  color: white;
+  background: #0f172a;
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.28);
+  font-weight: 900;
+}
+
+@media (max-width: 560px) {
+  .consultation-catalog-view-toast {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    text-align: center;
+    border-radius: 16px;
+  }
+}
+
+/* ============================================================
+   PAGO SIMULADO + ORDEN DE COMPRA - USUARIO CONSULTA
+   Pegar al final de features/consultation/catalog-view/styles.css
+   ============================================================ */
+
+.consultation-payment-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+  background:
+    radial-gradient(circle at top left, rgba(22, 163, 74, 0.28), transparent 36%),
+    rgba(15, 23, 42, 0.66);
+  backdrop-filter: blur(10px);
+}
+
+.consultation-payment-card {
+  position: relative;
+  width: min(760px, 100%);
+  max-height: 92vh;
+  overflow-y: auto;
+  padding: 30px;
+  border-radius: 32px;
+  background: white;
+  box-shadow: 0 28px 100px rgba(15, 23, 42, 0.38);
+}
+
+.consultation-payment-back {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 15px;
+  color: #0f172a;
+  background: #f1f5f9;
+  font-size: 24px;
+  font-weight: 950;
+  cursor: pointer;
+}
+
+.consultation-payment-back:hover {
+  background: #e2e8f0;
+}
+
+.consultation-payment-eyebrow {
+  display: inline-flex;
+  margin-left: 52px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  color: #16a34a;
+  background: #ecfdf5;
+  font-size: 12px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.consultation-payment-card h2 {
+  margin: 18px 0 10px;
+  color: #0f172a;
+  font-size: clamp(28px, 4vw, 42px);
+  letter-spacing: -1.2px;
+}
+
+.consultation-payment-card p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+.consultation-payment-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.consultation-payment-summary article {
+  padding: 16px;
+  border-radius: 20px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.consultation-payment-summary span {
+  display: block;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.consultation-payment-summary strong {
+  display: block;
+  margin-top: 8px;
+  color: #0f172a;
+  font-size: 18px;
+}
+
+.consultation-payment-products {
+  display: grid;
+  gap: 10px;
+  max-height: 230px;
+  overflow-y: auto;
+  margin-top: 18px;
+  padding-right: 5px;
+}
+
+.consultation-payment-products::-webkit-scrollbar {
+  width: 7px;
+}
+
+.consultation-payment-products::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 999px;
+}
+
+.consultation-payment-products::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+
+.consultation-payment-products article {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 14px;
+  border-radius: 18px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.consultation-payment-products strong,
+.consultation-payment-products span,
+.consultation-payment-products small {
+  display: block;
+}
+
+.consultation-payment-products strong {
+  color: #0f172a;
+}
+
+.consultation-payment-products span {
+  margin-top: 4px;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.consultation-payment-products small {
+  color: #16a34a;
+  font-weight: 950;
+  white-space: nowrap;
+}
+
+.consultation-payment-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.consultation-payment-actions a,
+.consultation-payment-actions button {
+  border: 0;
+  border-radius: 16px;
+  padding: 13px 16px;
+  font-weight: 950;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.consultation-payment-actions a {
+  background: #0f172a;
+  color: white;
+}
+
+.consultation-payment-actions button {
+  background: #16a34a;
+  color: white;
+  box-shadow: 0 14px 32px rgba(22, 163, 74, 0.25);
+}
+
+.consultation-order-success-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10001;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+  background: rgba(15, 23, 42, 0.62);
+  backdrop-filter: blur(10px);
+}
+
+.consultation-order-success {
+  position: relative;
+  width: min(470px, 100%);
+  padding: 32px;
+  border-radius: 32px;
+  background: white;
+  text-align: center;
+  box-shadow: 0 28px 100px rgba(15, 23, 42, 0.38);
+}
+
+.consultation-order-success > button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 14px;
+  background: #f1f5f9;
+  color: #0f172a;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.consultation-order-success-icon {
+  width: 74px;
+  height: 74px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 16px;
+  border-radius: 999px;
+  color: white;
+  background: linear-gradient(135deg, #16a34a, #22d3ee);
+  font-size: 38px;
+  font-weight: 950;
+  box-shadow: 0 18px 42px rgba(22, 163, 74, 0.28);
+}
+
+.consultation-order-success span {
+  display: inline-flex;
+  padding: 8px 12px;
+  border-radius: 999px;
+  color: #16a34a;
+  background: #ecfdf5;
+  font-size: 12px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.consultation-order-success h3 {
+  margin: 14px 0 8px;
+  color: #0f172a;
+  font-size: 28px;
+  letter-spacing: -0.8px;
+}
+
+.consultation-order-success p {
+  margin: 0;
+  color: #64748b;
+}
+
+.consultation-order-success > strong {
+  display: block;
+  margin: 16px 0;
+  padding: 14px;
+  border-radius: 18px;
+  color: #0f172a;
+  background: #f8fafc;
+  border: 1px dashed #94a3b8;
+  font-size: 22px;
+}
+
+.consultation-order-success small {
+  display: block;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.consultation-order-success div:last-child button {
+  margin-top: 22px;
+  border: 0;
+  border-radius: 16px;
+  padding: 13px 16px;
+  color: white;
+  background: #16a34a;
+  font-weight: 950;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .consultation-payment-card {
+    padding: 24px;
+    border-radius: 26px;
+  }
+
+  .consultation-payment-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .consultation-payment-products article {
+    flex-direction: column;
+  }
+
+  .consultation-payment-actions {
+    flex-direction: column;
+  }
+
+  .consultation-payment-actions a,
+  .consultation-payment-actions button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .consultation-order-success {
+    padding: 28px 22px;
+    border-radius: 28px;
+  }
+}
+

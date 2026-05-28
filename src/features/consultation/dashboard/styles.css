@@ -1,0 +1,1066 @@
+.consultation-dashboard-page { display: grid; gap: 22px; }
+.consultation-dashboard-hero { display: flex; justify-content: space-between; gap: 20px; align-items: stretch; padding: 28px; border-radius: 30px; background: linear-gradient(135deg, #ffffff, #f8fafc); border: 1px solid #e2e8f0; box-shadow: 0 18px 55px rgba(15,23,42,.08); }
+.consultation-dashboard-eyebrow { display: inline-flex; padding: 8px 12px; border-radius: 999px; color: #16a34a; background: color-mix(in srgb, #16a34a 10%, white); font-weight: 900; font-size: 12px; text-transform: uppercase; letter-spacing: .09em; }
+.consultation-dashboard-hero h2 { margin: 14px 0 8px; font-size: clamp(28px,4vw,46px); letter-spacing: -1.4px; color: #0f172a; }
+.consultation-dashboard-hero p { margin: 0; color: #64748b; line-height: 1.7; max-width: 780px; }
+.consultation-dashboard-filters { min-width: 320px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-content: center; }
+.consultation-dashboard-filters label { display: grid; gap: 7px; font-weight: 800; color: #334155; }
+.consultation-dashboard-filters select { border: 1px solid #dbe3ef; border-radius: 16px; padding: 12px; background: white; outline: none; }
+.consultation-dashboard-filters button, .consultation-dashboard-panel-head button, .consultation-dashboard-modal-actions button { border: 0; border-radius: 16px; padding: 12px 14px; font-weight: 900; color: white; background: #16a34a; box-shadow: 0 12px 28px color-mix(in srgb, #16a34a 26%, transparent); }
+.consultation-dashboard-filters button { grid-column: 1 / -1; }
+.consultation-dashboard-metrics { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 16px; }
+.consultation-dashboard-metrics article { padding: 20px; border-radius: 26px; background: white; border: 1px solid #e2e8f0; box-shadow: 0 14px 38px rgba(15,23,42,.06); }
+.consultation-dashboard-metrics article span { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 16px; background: color-mix(in srgb, #16a34a 10%, white); }
+.consultation-dashboard-metrics strong { display: block; margin-top: 14px; font-size: 28px; letter-spacing: -.8px; }
+.consultation-dashboard-metrics h3 { margin: 4px 0; font-size: 15px; }
+.consultation-dashboard-metrics p { margin: 0; color: #64748b; }
+.consultation-dashboard-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 16px; }
+.consultation-dashboard-panel { padding: 22px; border-radius: 28px; background: white; border: 1px solid #e2e8f0; box-shadow: 0 14px 42px rgba(15,23,42,.06); }
+.consultation-dashboard-panel-head { display: flex; justify-content: space-between; gap: 14px; align-items: start; margin-bottom: 18px; }
+.consultation-dashboard-panel-head span { color: #16a34a; font-weight: 900; text-transform: uppercase; font-size: 12px; letter-spacing: .08em; }
+.consultation-dashboard-panel-head h3 { margin: 5px 0 0; font-size: 22px; }
+.consultation-dashboard-bars { display: grid; gap: 16px; }
+.consultation-dashboard-bar div { display: flex; justify-content: space-between; margin-bottom: 7px; }
+.consultation-dashboard-bar small { color: #64748b; font-weight: 900; }
+.consultation-dashboard-bar span { display: block; height: 13px; border-radius: 999px; background: #e2e8f0; overflow: hidden; }
+.consultation-dashboard-bar i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #16a34a, #22d3ee); }
+.consultation-dashboard-timeline { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.consultation-dashboard-timeline li { display: flex; gap: 12px; align-items: flex-start; padding: 12px; border-radius: 18px; background: #f8fafc; }
+.consultation-dashboard-timeline li span { width: 28px; height: 28px; display: grid; place-items: center; border-radius: 999px; color: white; background: #16a34a; font-weight: 900; flex: 0 0 auto; }
+.consultation-dashboard-timeline p { margin: 4px 0 0; color: #334155; font-weight: 700; }
+.consultation-dashboard-modal-backdrop { position: fixed; inset: 0; background: rgba(15,23,42,.58); display: grid; place-items: center; padding: 20px; z-index: 50; }
+.consultation-dashboard-modal { position: relative; max-width: 560px; width: 100%; padding: 28px; background: white; border-radius: 30px; box-shadow: 0 24px 90px rgba(15,23,42,.35); }
+.consultation-dashboard-modal h3 { margin: 14px 0 8px; font-size: 28px; }
+.consultation-dashboard-modal p { color: #64748b; line-height: 1.7; }
+.consultation-dashboard-modal-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px; }
+.consultation-dashboard-modal-actions button:first-child { background: #e2e8f0; color: #0f172a; box-shadow: none; }
+.consultation-dashboard-close { position: absolute; top: 16px; right: 16px; border: 0; width: 38px; height: 38px; border-radius: 14px; background: #f1f5f9; font-size: 24px; }
+@media (max-width: 1100px) { .consultation-dashboard-hero, .consultation-dashboard-grid { grid-template-columns: 1fr; } .consultation-dashboard-hero { flex-direction: column; } .consultation-dashboard-metrics { grid-template-columns: repeat(2,1fr); } .consultation-dashboard-filters { min-width: 0; } }
+@media (max-width: 640px) { .consultation-dashboard-metrics, .consultation-dashboard-filters { grid-template-columns: 1fr; } }
+
+
+
+/* ============================================================
+   DASHBOARD USUARIO CONSULTA - INTERFAZ PROFESIONAL
+   Pegar al final del styles.css
+   ============================================================ */
+
+.consultation-dashboard-page,
+.consultation-dashboard-page * {
+  box-sizing: border-box;
+}
+
+.consultation-dashboard-page {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  display: grid;
+  gap: 22px;
+}
+
+.consultation-dashboard-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 22px;
+  align-items: stretch;
+  padding: 30px;
+  border-radius: 32px;
+  background:
+    radial-gradient(circle at top left, rgba(22, 163, 74, 0.18), transparent 34%),
+    linear-gradient(135deg, #ffffff, #f8fafc);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 18px 55px rgba(15, 23, 42, 0.08);
+}
+
+.consultation-dashboard-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  color: #16a34a;
+  background: #ecfdf5;
+  font-weight: 950;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+.consultation-dashboard-eyebrow::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #16a34a;
+  box-shadow: 0 0 0 5px rgba(22, 163, 74, 0.14);
+}
+
+.consultation-dashboard-hero h2 {
+  margin: 16px 0 10px;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.03;
+  letter-spacing: -1.4px;
+  color: #0f172a;
+}
+
+.consultation-dashboard-hero p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.7;
+  max-width: 780px;
+}
+
+.consultation-dashboard-filters {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  align-content: center;
+  padding: 18px;
+  border-radius: 26px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 14px 38px rgba(15, 23, 42, 0.06);
+}
+
+.consultation-dashboard-filters label {
+  display: grid;
+  gap: 7px;
+  color: #334155;
+  font-weight: 900;
+  font-size: 13px;
+}
+
+.consultation-dashboard-filters select {
+  width: 100%;
+  border: 1px solid #dbe3ef;
+  border-radius: 16px;
+  padding: 12px;
+  background: #f8fafc;
+  outline: none;
+  color: #0f172a;
+  font-weight: 750;
+}
+
+.consultation-dashboard-filters button,
+.consultation-dashboard-panel-head button,
+.consultation-dashboard-modal-actions button {
+  border: 0;
+  border-radius: 16px;
+  padding: 12px 14px;
+  font-weight: 950;
+  color: white;
+  background: #16a34a;
+  box-shadow: 0 12px 28px rgba(22, 163, 74, 0.22);
+  cursor: pointer;
+}
+
+.consultation-dashboard-filters button {
+  grid-column: 1 / -1;
+}
+
+.consultation-dashboard-filters button:last-child {
+  background: #0f172a;
+  box-shadow: none;
+}
+
+.consultation-dashboard-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.consultation-dashboard-metrics article {
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  border-radius: 26px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 14px 38px rgba(15, 23, 42, 0.06);
+}
+
+.consultation-dashboard-metrics article::after {
+  content: "";
+  position: absolute;
+  right: -26px;
+  top: -26px;
+  width: 88px;
+  height: 88px;
+  border-radius: 999px;
+  background: rgba(22, 163, 74, 0.1);
+}
+
+.consultation-dashboard-metrics article span {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: #ecfdf5;
+  position: relative;
+  z-index: 1;
+}
+
+.consultation-dashboard-metrics strong {
+  display: block;
+  margin-top: 14px;
+  font-size: 30px;
+  line-height: 1;
+  letter-spacing: -0.9px;
+  color: #0f172a;
+}
+
+.consultation-dashboard-metrics h3 {
+  margin: 6px 0 4px;
+  font-size: 15px;
+  color: #0f172a;
+}
+
+.consultation-dashboard-metrics p {
+  margin: 0;
+  color: #64748b;
+  font-weight: 700;
+}
+
+.consultation-dashboard-highlight-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) repeat(2, minmax(220px, 0.55fr));
+  gap: 14px;
+}
+
+.consultation-dashboard-highlight-card,
+.consultation-dashboard-mini-card {
+  padding: 20px;
+  border-radius: 28px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 14px 38px rgba(15, 23, 42, 0.06);
+}
+
+.consultation-dashboard-highlight-card {
+  background:
+    radial-gradient(circle at top left, rgba(22, 163, 74, 0.16), transparent 38%),
+    linear-gradient(135deg, #ecfdf5, #ffffff);
+}
+
+.consultation-dashboard-highlight-card span,
+.consultation-dashboard-mini-card span {
+  display: inline-flex;
+  padding: 7px 11px;
+  border-radius: 999px;
+  color: #16a34a;
+  background: white;
+  font-size: 12px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.consultation-dashboard-highlight-card h3 {
+  margin: 12px 0 8px;
+  color: #0f172a;
+  font-size: 27px;
+  letter-spacing: -0.8px;
+}
+
+.consultation-dashboard-highlight-card p,
+.consultation-dashboard-mini-card p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.6;
+  font-weight: 750;
+}
+
+.consultation-dashboard-highlight-card > strong {
+  display: inline-flex;
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-radius: 18px;
+  background: #0f172a;
+  color: white;
+  font-size: 20px;
+}
+
+.consultation-dashboard-mini-card strong {
+  display: block;
+  margin: 16px 0 7px;
+  color: #0f172a;
+  font-size: 28px;
+  letter-spacing: -0.8px;
+}
+
+.consultation-dashboard-chart-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.consultation-dashboard-panel {
+  min-width: 0;
+  padding: 22px;
+  border-radius: 28px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 14px 42px rgba(15, 23, 42, 0.06);
+}
+
+.consultation-dashboard-line-card {
+  grid-column: span 2;
+}
+
+.consultation-dashboard-panel-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.consultation-dashboard-panel-head span {
+  color: #16a34a;
+  background: #ecfdf5;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-weight: 950;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+.consultation-dashboard-panel-head h3 {
+  margin: 8px 0 0;
+  font-size: 22px;
+  color: #0f172a;
+  letter-spacing: -0.5px;
+}
+
+.consultation-dashboard-line-chart {
+  overflow: hidden;
+  border-radius: 22px;
+  background: #f8fafc;
+  border: 1px solid #eef2f7;
+  padding: 12px;
+}
+
+.consultation-dashboard-line-chart svg {
+  width: 100%;
+  height: 240px;
+}
+
+.consultation-dashboard-line-chart circle {
+  fill: #16a34a;
+  stroke: white;
+  stroke-width: 4px;
+}
+
+.consultation-dashboard-line-chart text {
+  fill: #64748b;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.consultation-dashboard-bars {
+  display: grid;
+  gap: 13px;
+}
+
+.consultation-dashboard-bar {
+  padding: 12px;
+  border-radius: 18px;
+  background: #f8fafc;
+  border: 1px solid #eef2f7;
+}
+
+.consultation-dashboard-bar div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.consultation-dashboard-bar strong {
+  color: #0f172a;
+}
+
+.consultation-dashboard-bar small {
+  color: #64748b;
+  font-weight: 900;
+}
+
+.consultation-dashboard-bar span,
+.consultation-dashboard-region-list p,
+.consultation-dashboard-vehicle-list p,
+.consultation-dashboard-report-list p {
+  display: block;
+  overflow: hidden;
+  height: 12px;
+  border-radius: 999px;
+  background: #e2e8f0;
+  margin: 0;
+}
+
+.consultation-dashboard-bar i,
+.consultation-dashboard-region-list i,
+.consultation-dashboard-vehicle-list i,
+.consultation-dashboard-report-list i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #16a34a, #22d3ee);
+}
+
+.consultation-dashboard-donut-layout {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 18px;
+  align-items: center;
+}
+
+.consultation-dashboard-donut {
+  width: 150px;
+  height: 150px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  padding: 15px;
+}
+
+.consultation-dashboard-donut > div {
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  background: white;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  box-shadow: inset 0 0 0 1px #e2e8f0;
+}
+
+.consultation-dashboard-donut strong,
+.consultation-dashboard-donut span {
+  display: block;
+}
+
+.consultation-dashboard-donut strong {
+  color: #0f172a;
+  font-size: 26px;
+}
+
+.consultation-dashboard-donut span {
+  margin-top: -18px;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.consultation-dashboard-legend {
+  display: grid;
+  gap: 10px;
+}
+
+.consultation-dashboard-legend article {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 11px;
+  border-radius: 16px;
+  background: #f8fafc;
+  border: 1px solid #eef2f7;
+}
+
+.consultation-dashboard-legend article > span {
+  width: 13px;
+  height: 13px;
+  border-radius: 999px;
+}
+
+.consultation-dashboard-legend .alta,
+.consultation-dashboard-legend .bajo {
+  background: #16a34a;
+}
+
+.consultation-dashboard-legend .media,
+.consultation-dashboard-legend .medio {
+  background: #f59e0b;
+}
+
+.consultation-dashboard-legend .baja,
+.consultation-dashboard-legend .alto {
+  background: #ef4444;
+}
+
+.consultation-dashboard-legend p {
+  margin: 0;
+  color: #334155;
+  font-weight: 800;
+}
+
+.consultation-dashboard-region-list,
+.consultation-dashboard-vehicle-list,
+.consultation-dashboard-report-list {
+  display: grid;
+  gap: 12px;
+}
+
+.consultation-dashboard-region-list article,
+.consultation-dashboard-vehicle-list article,
+.consultation-dashboard-report-list article {
+  padding: 12px;
+  border-radius: 18px;
+  background: #f8fafc;
+  border: 1px solid #eef2f7;
+}
+
+.consultation-dashboard-region-list div,
+.consultation-dashboard-vehicle-list div,
+.consultation-dashboard-report-list div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.consultation-dashboard-region-list strong,
+.consultation-dashboard-vehicle-list strong,
+.consultation-dashboard-report-list strong {
+  color: #0f172a;
+}
+
+.consultation-dashboard-region-list small,
+.consultation-dashboard-vehicle-list small,
+.consultation-dashboard-report-list small {
+  color: #64748b;
+  font-weight: 900;
+}
+
+.consultation-dashboard-vehicle-list article > span {
+  display: inline-flex;
+  margin-bottom: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #ecfdf5;
+  color: #16a34a;
+  font-weight: 950;
+  font-size: 12px;
+}
+
+.consultation-dashboard-timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+  max-height: 380px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.consultation-dashboard-timeline li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 13px;
+  border-radius: 18px;
+  background: #f8fafc;
+  border: 1px solid #eef2f7;
+}
+
+.consultation-dashboard-timeline li > span {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  color: white;
+  background: #16a34a;
+  font-weight: 950;
+  flex: 0 0 auto;
+}
+
+.consultation-dashboard-timeline strong {
+  color: #0f172a;
+}
+
+.consultation-dashboard-timeline p {
+  margin: 5px 0 4px;
+  color: #334155;
+  font-weight: 700;
+}
+
+.consultation-dashboard-timeline small {
+  color: #64748b;
+  font-weight: 800;
+}
+
+.consultation-dashboard-toast {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  padding: 14px 18px;
+  border-radius: 18px;
+  color: white;
+  background: #0f172a;
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.28);
+  z-index: 80;
+  font-weight: 900;
+}
+
+.consultation-dashboard-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.58);
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  z-index: 50;
+}
+
+.consultation-dashboard-modal {
+  position: relative;
+  max-width: 620px;
+  width: 100%;
+  padding: 28px;
+  background: white;
+  border-radius: 30px;
+  box-shadow: 0 24px 90px rgba(15, 23, 42, 0.35);
+}
+
+.consultation-dashboard-modal h3 {
+  margin: 14px 0 8px;
+  font-size: 28px;
+  color: #0f172a;
+}
+
+.consultation-dashboard-modal p {
+  color: #64748b;
+  line-height: 1.7;
+}
+
+.consultation-dashboard-modal-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 11px;
+  margin-top: 16px;
+}
+
+.consultation-dashboard-modal-summary article {
+  padding: 14px;
+  border-radius: 18px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.consultation-dashboard-modal-summary span {
+  display: block;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.consultation-dashboard-modal-summary strong {
+  display: block;
+  margin-top: 7px;
+  color: #0f172a;
+  font-size: 22px;
+}
+
+.consultation-dashboard-modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.consultation-dashboard-modal-actions button:first-child {
+  background: #e2e8f0;
+  color: #0f172a;
+  box-shadow: none;
+}
+
+.consultation-dashboard-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  border: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 14px;
+  background: #f1f5f9;
+  font-size: 24px;
+  color: #0f172a;
+  cursor: pointer;
+}
+
+/* Responsive */
+
+@media (max-width: 1320px) {
+  .consultation-dashboard-chart-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .consultation-dashboard-line-card {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 1100px) {
+  .consultation-dashboard-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .consultation-dashboard-filters {
+    min-width: 0;
+  }
+
+  .consultation-dashboard-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .consultation-dashboard-highlight-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 780px) {
+  .consultation-dashboard-hero {
+    padding: 22px;
+    border-radius: 24px;
+  }
+
+  .consultation-dashboard-hero h2 {
+    font-size: 32px;
+  }
+
+  .consultation-dashboard-chart-grid,
+  .consultation-dashboard-line-card {
+    grid-template-columns: 1fr;
+    grid-column: auto;
+  }
+
+  .consultation-dashboard-donut-layout {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .consultation-dashboard-filters {
+    grid-template-columns: 1fr;
+  }
+
+  .consultation-dashboard-modal-summary {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .consultation-dashboard-page {
+    gap: 16px;
+  }
+
+  .consultation-dashboard-hero {
+    padding: 18px;
+    border-radius: 22px;
+  }
+
+  .consultation-dashboard-hero h2 {
+    font-size: 27px;
+  }
+
+  .consultation-dashboard-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .consultation-dashboard-panel,
+  .consultation-dashboard-highlight-card,
+  .consultation-dashboard-mini-card {
+    padding: 16px;
+    border-radius: 22px;
+  }
+
+  .consultation-dashboard-panel-head {
+    flex-direction: column;
+  }
+
+  .consultation-dashboard-panel-head button {
+    width: 100%;
+  }
+
+  .consultation-dashboard-line-chart svg {
+    height: 200px;
+  }
+
+  .consultation-dashboard-modal-backdrop {
+    padding: 12px;
+    align-items: end;
+  }
+
+  .consultation-dashboard-modal {
+    max-width: 100%;
+    max-height: 88vh;
+    overflow-y: auto;
+    border-radius: 24px 24px 0 0;
+    padding: 22px;
+  }
+
+  .consultation-dashboard-modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .consultation-dashboard-modal-actions button {
+    width: 100%;
+  }
+
+  .consultation-dashboard-toast {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    text-align: center;
+  }
+}
+
+/* ============================================================
+   DASHBOARD CONSULTA - GRID EQUILIBRADO + CARDS CON SCROLL
+   Pegar al final de features/consultation/dashboard/styles.css
+   ============================================================ */
+
+.consultation-dashboard-chart-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+
+/* Todas las tarjetas del dashboard tendrán el mismo alto */
+.consultation-dashboard-panel {
+  height: 360px;
+  min-height: 360px;
+  max-height: 360px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 20px;
+  border-radius: 28px;
+}
+
+/* Evita que el gráfico lineal ocupe doble espacio */
+.consultation-dashboard-line-card {
+  grid-column: auto !important;
+}
+
+/* Cabecera fija dentro de cada tarjeta */
+.consultation-dashboard-panel-head {
+  flex: 0 0 auto;
+  margin-bottom: 14px;
+}
+
+/* Contenido con scroll interno si crece */
+.consultation-dashboard-bars,
+.consultation-dashboard-line-chart,
+.consultation-dashboard-donut-layout,
+.consultation-dashboard-region-list,
+.consultation-dashboard-vehicle-list,
+.consultation-dashboard-report-list,
+.consultation-dashboard-timeline {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 6px;
+}
+
+/* Scroll visual elegante dentro de las cards */
+.consultation-dashboard-bars::-webkit-scrollbar,
+.consultation-dashboard-line-chart::-webkit-scrollbar,
+.consultation-dashboard-donut-layout::-webkit-scrollbar,
+.consultation-dashboard-region-list::-webkit-scrollbar,
+.consultation-dashboard-vehicle-list::-webkit-scrollbar,
+.consultation-dashboard-report-list::-webkit-scrollbar,
+.consultation-dashboard-timeline::-webkit-scrollbar {
+  width: 7px;
+}
+
+.consultation-dashboard-bars::-webkit-scrollbar-track,
+.consultation-dashboard-line-chart::-webkit-scrollbar-track,
+.consultation-dashboard-donut-layout::-webkit-scrollbar-track,
+.consultation-dashboard-region-list::-webkit-scrollbar-track,
+.consultation-dashboard-vehicle-list::-webkit-scrollbar-track,
+.consultation-dashboard-report-list::-webkit-scrollbar-track,
+.consultation-dashboard-timeline::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 999px;
+}
+
+.consultation-dashboard-bars::-webkit-scrollbar-thumb,
+.consultation-dashboard-line-chart::-webkit-scrollbar-thumb,
+.consultation-dashboard-donut-layout::-webkit-scrollbar-thumb,
+.consultation-dashboard-region-list::-webkit-scrollbar-thumb,
+.consultation-dashboard-vehicle-list::-webkit-scrollbar-thumb,
+.consultation-dashboard-report-list::-webkit-scrollbar-thumb,
+.consultation-dashboard-timeline::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+
+.consultation-dashboard-bars::-webkit-scrollbar-thumb:hover,
+.consultation-dashboard-line-chart::-webkit-scrollbar-thumb:hover,
+.consultation-dashboard-donut-layout::-webkit-scrollbar-thumb:hover,
+.consultation-dashboard-region-list::-webkit-scrollbar-thumb:hover,
+.consultation-dashboard-vehicle-list::-webkit-scrollbar-thumb:hover,
+.consultation-dashboard-report-list::-webkit-scrollbar-thumb:hover,
+.consultation-dashboard-timeline::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Mejora visual del gráfico lineal para que no se vea tan vacío */
+.consultation-dashboard-line-chart {
+  display: grid;
+  place-items: center;
+  border-radius: 22px;
+  background:
+    linear-gradient(to right, rgba(226, 232, 240, 0.6) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(226, 232, 240, 0.6) 1px, transparent 1px),
+    #f8fafc;
+  background-size: 48px 48px;
+  border: 1px solid #e2e8f0;
+  padding: 14px;
+}
+
+.consultation-dashboard-line-chart svg {
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+}
+
+/* Mejora visual para las tarjetas circulares */
+.consultation-dashboard-donut-layout {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+}
+
+.consultation-dashboard-donut-panel {
+  justify-content: flex-start;
+}
+
+/* Listas más compactas para evitar espacios vacíos */
+.consultation-dashboard-region-list,
+.consultation-dashboard-vehicle-list,
+.consultation-dashboard-report-list {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.consultation-dashboard-region-list article,
+.consultation-dashboard-vehicle-list article,
+.consultation-dashboard-report-list article,
+.consultation-dashboard-bar,
+.consultation-dashboard-timeline li {
+  border-radius: 16px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+/* Hace que cada barra se vea más ordenada */
+.consultation-dashboard-bar {
+  padding: 11px;
+}
+
+.consultation-dashboard-bar div,
+.consultation-dashboard-region-list div,
+.consultation-dashboard-vehicle-list div,
+.consultation-dashboard-report-list div {
+  align-items: center;
+}
+
+/* Actividad más limpia */
+.consultation-dashboard-timeline {
+  gap: 10px;
+  max-height: none;
+}
+
+.consultation-dashboard-timeline li {
+  padding: 12px;
+}
+
+.consultation-dashboard-timeline p {
+  line-height: 1.45;
+}
+
+/* Evita tarjetas gigantes en pantallas anchas */
+@media (min-width: 1500px) {
+  .consultation-dashboard-chart-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .consultation-dashboard-panel {
+    height: 350px;
+    min-height: 350px;
+    max-height: 350px;
+  }
+}
+
+/* Laptop / tablet */
+@media (max-width: 1320px) {
+  .consultation-dashboard-chart-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .consultation-dashboard-panel {
+    height: 370px;
+    min-height: 370px;
+    max-height: 370px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .consultation-dashboard-chart-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .consultation-dashboard-panel {
+    height: auto;
+    min-height: 340px;
+    max-height: 430px;
+  }
+
+  .consultation-dashboard-donut-layout {
+    grid-template-columns: 140px minmax(0, 1fr);
+  }
+}
+
+/* Celular */
+@media (max-width: 560px) {
+  .consultation-dashboard-panel {
+    min-height: 330px;
+    max-height: 420px;
+    padding: 16px;
+    border-radius: 22px;
+  }
+
+  .consultation-dashboard-panel-head {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .consultation-dashboard-panel-head button {
+    width: 100%;
+  }
+
+  .consultation-dashboard-donut-layout {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .consultation-dashboard-donut {
+    width: 140px;
+    height: 140px;
+  }
+
+  .consultation-dashboard-line-chart svg {
+    min-height: 190px;
+  }
+}

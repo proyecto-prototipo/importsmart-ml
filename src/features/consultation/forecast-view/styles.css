@@ -1,0 +1,598 @@
+.consultation-forecast-view-page { display: grid; gap: 18px; }
+.consultation-forecast-view-hero { display: flex; justify-content: space-between; gap: 22px; align-items: center; padding: 26px; border-radius: 30px; background: linear-gradient(135deg,#ffffff,#f8fafc); border: 1px solid #e2e8f0; box-shadow: 0 18px 55px rgba(15,23,42,.07); }
+.consultation-forecast-view-eyebrow { display: inline-flex; padding: 7px 11px; border-radius: 999px; background: color-mix(in srgb, #16a34a 10%, white); color: #16a34a; font-size: 12px; font-weight: 950; text-transform: uppercase; letter-spacing: .09em; }
+.consultation-forecast-view-hero h2 { margin: 12px 0 8px; font-size: clamp(26px,4vw,42px); color: #0f172a; letter-spacing: -1.2px; }
+.consultation-forecast-view-hero p { margin: 0; color: #64748b; line-height: 1.7; max-width: 860px; }
+.consultation-forecast-view-hero-actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
+.consultation-forecast-view-hero-actions button, .consultation-forecast-view-row-actions button, .consultation-forecast-view-modal-actions button { border: 0; border-radius: 14px; padding: 11px 14px; font-weight: 900; background: #16a34a; color: white; box-shadow: 0 12px 28px color-mix(in srgb, #16a34a 22%, transparent); }
+.consultation-forecast-view-hero-actions button:last-child, .consultation-forecast-view-modal-actions button:first-child { background: #0f172a; box-shadow: none; }
+.consultation-forecast-view-toolbar { display: grid; grid-template-columns: minmax(280px, 1.5fr) repeat(2, minmax(150px, 1fr)); gap: 12px; padding: 16px; border-radius: 24px; background: white; border: 1px solid #e2e8f0; box-shadow: 0 10px 30px rgba(15,23,42,.05); }
+.consultation-forecast-view-toolbar label { display: grid; gap: 7px; color: #334155; font-weight: 900; font-size: 13px; }
+.consultation-forecast-view-toolbar input, .consultation-forecast-view-toolbar select, .consultation-forecast-view-form input { border: 1px solid #dbe3ef; background: #f8fafc; border-radius: 15px; padding: 12px 13px; outline: none; color: #0f172a; }
+.consultation-forecast-view-toolbar input:focus, .consultation-forecast-view-toolbar select:focus, .consultation-forecast-view-form input:focus { border-color: #16a34a; box-shadow: 0 0 0 4px color-mix(in srgb, #16a34a 14%, transparent); background: white; }
+.consultation-forecast-view-summary { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; }
+.consultation-forecast-view-summary article { padding: 18px; border-radius: 24px; background: white; border: 1px solid #e2e8f0; display: grid; gap: 4px; }
+.consultation-forecast-view-summary strong { font-size: 28px; letter-spacing: -.8px; color: #0f172a; }
+.consultation-forecast-view-summary span { color: #64748b; font-weight: 700; }
+.consultation-forecast-view-table-card { background: white; border: 1px solid #e2e8f0; border-radius: 28px; overflow: hidden; box-shadow: 0 14px 42px rgba(15,23,42,.06); }
+.consultation-forecast-view-table-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 20px 22px; border-bottom: 1px solid #e2e8f0; }
+.consultation-forecast-view-table-head span { color: #16a34a; font-weight: 950; text-transform: uppercase; letter-spacing: .08em; font-size: 12px; }
+.consultation-forecast-view-table-head h3 { margin: 5px 0 0; font-size: 22px; }
+.consultation-forecast-view-table-head small { color: #64748b; font-weight: 900; }
+.consultation-forecast-view-table-wrap { overflow-x: auto; }
+.consultation-forecast-view-table-wrap table { width: 100%; border-collapse: collapse; min-width: 920px; }
+.consultation-forecast-view-table-wrap th { text-align: left; padding: 14px 16px; color: #475569; background: #f8fafc; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
+.consultation-forecast-view-table-wrap td { padding: 14px 16px; border-top: 1px solid #eef2f7; color: #334155; font-weight: 650; vertical-align: middle; }
+.consultation-forecast-view-table-wrap tr:hover td { background: #f8fafc; }
+.consultation-forecast-view-row-actions { display: flex; flex-wrap: wrap; gap: 7px; min-width: 220px; }
+.consultation-forecast-view-row-actions button { padding: 8px 10px; border-radius: 12px; font-size: 12px; box-shadow: none; background: color-mix(in srgb, #16a34a 10%, white); color: #16a34a; border: 1px solid color-mix(in srgb, #16a34a 20%, white); }
+.consultation-forecast-view-badge { display: inline-flex; align-items: center; padding: 6px 10px; border-radius: 999px; font-size: 12px; font-weight: 950; white-space: nowrap; }
+.consultation-forecast-view-badge.success { color: #047857; background: #d1fae5; }
+.consultation-forecast-view-badge.warning { color: #b45309; background: #fef3c7; }
+.consultation-forecast-view-badge.danger { color: #b91c1c; background: #fee2e2; }
+.consultation-forecast-view-badge.neutral { color: #475569; background: #f1f5f9; }
+.consultation-forecast-view-empty { text-align: center; color: #64748b; padding: 34px !important; }
+.consultation-forecast-view-toast { position: fixed; right: 28px; bottom: 28px; padding: 14px 18px; border-radius: 18px; color: white; background: #0f172a; box-shadow: 0 18px 50px rgba(15,23,42,.28); z-index: 80; font-weight: 900; }
+.consultation-forecast-view-modal-backdrop { position: fixed; inset: 0; background: rgba(15,23,42,.58); display: grid; place-items: center; padding: 20px; z-index: 50; }
+.consultation-forecast-view-modal { position: relative; max-width: 760px; max-height: min(760px, 92vh); overflow-y: auto; width: 100%; padding: 28px; background: white; border-radius: 30px; box-shadow: 0 24px 90px rgba(15,23,42,.35); }
+.consultation-forecast-view-modal h3 { margin: 14px 0 18px; font-size: 28px; letter-spacing: -.8px; }
+.consultation-forecast-view-close { position: absolute; top: 16px; right: 16px; width: 38px; height: 38px; border-radius: 14px; border: 0; background: #f1f5f9; color: #0f172a; font-size: 24px; }
+.consultation-forecast-view-detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+.consultation-forecast-view-detail-grid article { padding: 14px; border-radius: 18px; background: #f8fafc; border: 1px solid #e2e8f0; }
+.consultation-forecast-view-detail-grid span { display: block; color: #64748b; font-weight: 900; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }
+.consultation-forecast-view-detail-grid strong { display: block; margin-top: 6px; color: #0f172a; }
+.consultation-forecast-view-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+.consultation-forecast-view-form-grid label { display: grid; gap: 7px; font-weight: 900; color: #334155; }
+.consultation-forecast-view-modal-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 22px; }
+@media (max-width: 1100px) { .consultation-forecast-view-hero { flex-direction: column; align-items: flex-start; } .consultation-forecast-view-toolbar { grid-template-columns: 1fr 1fr; } .consultation-forecast-view-summary { grid-template-columns: 1fr; } }
+@media (max-width: 680px) { .consultation-forecast-view-toolbar, .consultation-forecast-view-detail-grid, .consultation-forecast-view-form-grid { grid-template-columns: 1fr; } .consultation-forecast-view-hero-actions { width: 100%; } .consultation-forecast-view-hero-actions button { flex: 1; } }
+
+
+/* ============================================================
+   FORECASTING PUBLICADO - USUARIO CONSULTA
+   Pegar al final del styles.css
+   ============================================================ */
+
+.consultation-forecast-view-page,
+.consultation-forecast-view-page * {
+  box-sizing: border-box;
+}
+
+.consultation-forecast-view-page {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.consultation-forecast-view-hero {
+  background:
+    radial-gradient(circle at top left, rgba(22, 163, 74, 0.15), transparent 34%),
+    linear-gradient(135deg, #ffffff, #f8fafc);
+}
+
+.consultation-forecast-view-hero-actions button:first-child {
+  background: linear-gradient(135deg, #16a34a, #059669);
+  box-shadow: 0 12px 28px rgba(22, 163, 74, 0.22);
+}
+
+.consultation-forecast-source-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 0.9fr);
+  gap: 18px;
+  align-items: stretch;
+  padding: 22px;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top left, rgba(22, 163, 74, 0.13), transparent 34%),
+    linear-gradient(135deg, #ffffff, #f8fafc);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 14px 42px rgba(15, 23, 42, 0.06);
+}
+
+.consultation-forecast-source-card > div:first-child span,
+.consultation-forecast-chart-head span {
+  display: inline-flex;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: #ecfdf5;
+  color: #16a34a;
+  font-size: 12px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.consultation-forecast-source-card h3 {
+  margin: 12px 0 8px;
+  color: #0f172a;
+  font-size: 26px;
+  letter-spacing: -0.7px;
+}
+
+.consultation-forecast-source-card p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+.consultation-forecast-source-status {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.consultation-forecast-source-status article {
+  display: grid;
+  gap: 6px;
+  align-content: center;
+  padding: 16px;
+  border-radius: 22px;
+  background: white;
+  border: 1px solid #e2e8f0;
+}
+
+.consultation-forecast-source-status strong {
+  color: #0f172a;
+  font-size: 19px;
+  letter-spacing: -0.5px;
+}
+
+.consultation-forecast-source-status span {
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.consultation-forecast-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.consultation-forecast-kpis article {
+  padding: 18px;
+  border-radius: 24px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 12px 34px rgba(15, 23, 42, 0.05);
+}
+
+.consultation-forecast-kpis article > span {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: #ecfdf5;
+  margin-bottom: 12px;
+}
+
+.consultation-forecast-kpis strong {
+  display: block;
+  color: #0f172a;
+  font-size: 26px;
+  line-height: 1;
+  letter-spacing: -0.8px;
+}
+
+.consultation-forecast-kpis p {
+  margin: 7px 0 0;
+  color: #64748b;
+  font-weight: 800;
+}
+
+.consultation-forecast-analytics-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.8fr 1fr;
+  gap: 14px;
+}
+
+.consultation-forecast-chart-card,
+.consultation-forecast-donut-card {
+  padding: 20px;
+  border-radius: 26px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 14px 38px rgba(15, 23, 42, 0.06);
+}
+
+.consultation-forecast-chart-head {
+  margin-bottom: 18px;
+}
+
+.consultation-forecast-chart-head h3 {
+  margin: 8px 0 0;
+  color: #0f172a;
+  font-size: 22px;
+  letter-spacing: -0.5px;
+}
+
+.consultation-forecast-bars {
+  display: grid;
+  gap: 14px;
+}
+
+.consultation-forecast-bar div {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 7px;
+}
+
+.consultation-forecast-bar strong {
+  color: #0f172a;
+}
+
+.consultation-forecast-bar small {
+  color: #64748b;
+  font-weight: 900;
+}
+
+.consultation-forecast-bar > span {
+  display: block;
+  overflow: hidden;
+  height: 13px;
+  border-radius: 999px;
+  background: #e2e8f0;
+}
+
+.consultation-forecast-bar i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #16a34a, #22c55e);
+}
+
+.consultation-forecast-donut-wrap {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 18px;
+  align-items: center;
+}
+
+.consultation-forecast-donut {
+  width: 150px;
+  height: 150px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  padding: 15px;
+}
+
+.consultation-forecast-donut > div {
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  background: white;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  box-shadow: inset 0 0 0 1px #e2e8f0;
+}
+
+.consultation-forecast-donut strong,
+.consultation-forecast-donut span {
+  display: block;
+}
+
+.consultation-forecast-donut strong {
+  font-size: 26px;
+  color: #0f172a;
+}
+
+.consultation-forecast-donut span {
+  margin-top: -18px;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.consultation-forecast-donut-legend {
+  display: grid;
+  gap: 10px;
+}
+
+.consultation-forecast-donut-legend article {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.consultation-forecast-donut-legend article > span {
+  width: 13px;
+  height: 13px;
+  border-radius: 999px;
+  flex: 0 0 auto;
+}
+
+.consultation-forecast-donut-legend .alta {
+  background: #16a34a;
+}
+
+.consultation-forecast-donut-legend .media {
+  background: #f59e0b;
+}
+
+.consultation-forecast-donut-legend .baja {
+  background: #ef4444;
+}
+
+.consultation-forecast-donut-legend p {
+  margin: 0;
+  color: #334155;
+  font-weight: 800;
+}
+
+.consultation-forecast-donut-legend strong {
+  color: #0f172a;
+}
+
+.consultation-forecast-confidence-list {
+  display: grid;
+  gap: 12px;
+}
+
+.consultation-forecast-confidence {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px;
+  border-radius: 18px;
+  background: #f8fafc;
+  border: 1px solid #eef2f7;
+}
+
+.consultation-forecast-confidence strong,
+.consultation-forecast-confidence small {
+  display: block;
+}
+
+.consultation-forecast-confidence strong {
+  color: #0f172a;
+}
+
+.consultation-forecast-confidence small {
+  margin-top: 3px;
+  color: #64748b;
+  font-weight: 800;
+}
+
+.consultation-forecast-ring {
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  flex: 0 0 auto;
+  background: conic-gradient(#16a34a var(--value), #e2e8f0 0);
+  display: grid;
+  place-items: center;
+  padding: 5px;
+}
+
+.consultation-forecast-ring span {
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  background: white;
+  display: grid;
+  place-items: center;
+  color: #0f172a;
+  font-size: 12px;
+  font-weight: 950;
+}
+
+.consultation-forecast-detail-subtitle {
+  margin: -10px 0 18px;
+  color: #64748b;
+  font-weight: 800;
+}
+
+.consultation-forecast-insight {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 20px;
+  background: #ecfdf5;
+  border: 1px solid #bbf7d0;
+}
+
+.consultation-forecast-insight strong {
+  color: #047857;
+}
+
+.consultation-forecast-insight p {
+  margin: 8px 0 0;
+  color: #334155;
+  line-height: 1.7;
+}
+
+.consultation-forecast-view-table-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.consultation-forecast-view-table-wrap::-webkit-scrollbar {
+  height: 8px;
+}
+
+.consultation-forecast-view-table-wrap::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 999px;
+}
+
+.consultation-forecast-view-table-wrap::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+
+/* Responsive */
+
+@media (max-width: 1320px) {
+  .consultation-forecast-analytics-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .consultation-forecast-donut-card {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 1200px) {
+  .consultation-forecast-kpis {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .consultation-forecast-source-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+  .consultation-forecast-analytics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .consultation-forecast-source-status {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .consultation-forecast-view-table-wrap table {
+    min-width: 980px;
+  }
+}
+
+@media (max-width: 768px) {
+  .consultation-forecast-view-hero {
+    padding: 20px;
+    border-radius: 24px;
+  }
+
+  .consultation-forecast-view-hero h2 {
+    font-size: 30px;
+  }
+
+  .consultation-forecast-source-card {
+    padding: 18px;
+    border-radius: 24px;
+  }
+
+  .consultation-forecast-source-status {
+    grid-template-columns: 1fr;
+  }
+
+  .consultation-forecast-kpis {
+    grid-template-columns: 1fr;
+  }
+
+  .consultation-forecast-chart-card,
+  .consultation-forecast-donut-card {
+    padding: 18px;
+    border-radius: 24px;
+  }
+
+  .consultation-forecast-donut-wrap {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .consultation-forecast-view-toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .consultation-forecast-view-search {
+    grid-column: 1 / -1;
+  }
+
+  .consultation-forecast-view-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .consultation-forecast-view-table-wrap table {
+    min-width: 920px;
+  }
+
+  .consultation-forecast-view-modal {
+    max-width: 94vw;
+    padding: 24px;
+    border-radius: 24px;
+  }
+
+  .consultation-forecast-view-detail-grid,
+  .consultation-forecast-view-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .consultation-forecast-view-modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .consultation-forecast-view-modal-actions button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .consultation-forecast-view-hero {
+    padding: 18px;
+    border-radius: 22px;
+  }
+
+  .consultation-forecast-view-hero h2 {
+    font-size: 26px;
+  }
+
+  .consultation-forecast-view-hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .consultation-forecast-view-hero-actions button {
+    width: 100%;
+  }
+
+  .consultation-forecast-source-card {
+    padding: 16px;
+    border-radius: 22px;
+  }
+
+  .consultation-forecast-source-card h3,
+  .consultation-forecast-chart-head h3 {
+    font-size: 20px;
+  }
+
+  .consultation-forecast-view-table-wrap table {
+    min-width: 860px;
+  }
+
+  .consultation-forecast-view-modal-backdrop {
+    padding: 12px;
+    align-items: end;
+  }
+
+  .consultation-forecast-view-modal {
+    max-width: 100%;
+    max-height: 88vh;
+    border-radius: 24px 24px 0 0;
+    padding: 22px;
+  }
+
+  .consultation-forecast-view-close {
+    top: 12px;
+    right: 12px;
+    width: 34px;
+    height: 34px;
+    border-radius: 12px;
+    font-size: 22px;
+  }
+
+  .consultation-forecast-view-toast {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    text-align: center;
+    border-radius: 16px;
+  }
+}

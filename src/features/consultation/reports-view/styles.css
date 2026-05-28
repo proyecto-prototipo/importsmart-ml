@@ -1,0 +1,376 @@
+.consultation-reports-view-page { display: grid; gap: 18px; }
+.consultation-reports-view-hero { display: flex; justify-content: space-between; gap: 22px; align-items: center; padding: 26px; border-radius: 30px; background: linear-gradient(135deg,#ffffff,#f8fafc); border: 1px solid #e2e8f0; box-shadow: 0 18px 55px rgba(15,23,42,.07); }
+.consultation-reports-view-eyebrow { display: inline-flex; padding: 7px 11px; border-radius: 999px; background: color-mix(in srgb, #16a34a 10%, white); color: #16a34a; font-size: 12px; font-weight: 950; text-transform: uppercase; letter-spacing: .09em; }
+.consultation-reports-view-hero h2 { margin: 12px 0 8px; font-size: clamp(26px,4vw,42px); color: #0f172a; letter-spacing: -1.2px; }
+.consultation-reports-view-hero p { margin: 0; color: #64748b; line-height: 1.7; max-width: 860px; }
+.consultation-reports-view-hero-actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
+.consultation-reports-view-hero-actions button, .consultation-reports-view-row-actions button, .consultation-reports-view-modal-actions button { border: 0; border-radius: 14px; padding: 11px 14px; font-weight: 900; background: #16a34a; color: white; box-shadow: 0 12px 28px color-mix(in srgb, #16a34a 22%, transparent); }
+.consultation-reports-view-hero-actions button:last-child, .consultation-reports-view-modal-actions button:first-child { background: #0f172a; box-shadow: none; }
+.consultation-reports-view-toolbar { display: grid; grid-template-columns: minmax(280px, 1.5fr) repeat(2, minmax(150px, 1fr)); gap: 12px; padding: 16px; border-radius: 24px; background: white; border: 1px solid #e2e8f0; box-shadow: 0 10px 30px rgba(15,23,42,.05); }
+.consultation-reports-view-toolbar label { display: grid; gap: 7px; color: #334155; font-weight: 900; font-size: 13px; }
+.consultation-reports-view-toolbar input, .consultation-reports-view-toolbar select, .consultation-reports-view-form input { border: 1px solid #dbe3ef; background: #f8fafc; border-radius: 15px; padding: 12px 13px; outline: none; color: #0f172a; }
+.consultation-reports-view-toolbar input:focus, .consultation-reports-view-toolbar select:focus, .consultation-reports-view-form input:focus { border-color: #16a34a; box-shadow: 0 0 0 4px color-mix(in srgb, #16a34a 14%, transparent); background: white; }
+.consultation-reports-view-summary { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; }
+.consultation-reports-view-summary article { padding: 18px; border-radius: 24px; background: white; border: 1px solid #e2e8f0; display: grid; gap: 4px; }
+.consultation-reports-view-summary strong { font-size: 28px; letter-spacing: -.8px; color: #0f172a; }
+.consultation-reports-view-summary span { color: #64748b; font-weight: 700; }
+.consultation-reports-view-table-card { background: white; border: 1px solid #e2e8f0; border-radius: 28px; overflow: hidden; box-shadow: 0 14px 42px rgba(15,23,42,.06); }
+.consultation-reports-view-table-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 20px 22px; border-bottom: 1px solid #e2e8f0; }
+.consultation-reports-view-table-head span { color: #16a34a; font-weight: 950; text-transform: uppercase; letter-spacing: .08em; font-size: 12px; }
+.consultation-reports-view-table-head h3 { margin: 5px 0 0; font-size: 22px; }
+.consultation-reports-view-table-head small { color: #64748b; font-weight: 900; }
+.consultation-reports-view-table-wrap { overflow-x: auto; }
+.consultation-reports-view-table-wrap table { width: 100%; border-collapse: collapse; min-width: 920px; }
+.consultation-reports-view-table-wrap th { text-align: left; padding: 14px 16px; color: #475569; background: #f8fafc; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
+.consultation-reports-view-table-wrap td { padding: 14px 16px; border-top: 1px solid #eef2f7; color: #334155; font-weight: 650; vertical-align: middle; }
+.consultation-reports-view-table-wrap tr:hover td { background: #f8fafc; }
+.consultation-reports-view-row-actions { display: flex; flex-wrap: wrap; gap: 7px; min-width: 220px; }
+.consultation-reports-view-row-actions button { padding: 8px 10px; border-radius: 12px; font-size: 12px; box-shadow: none; background: color-mix(in srgb, #16a34a 10%, white); color: #16a34a; border: 1px solid color-mix(in srgb, #16a34a 20%, white); }
+.consultation-reports-view-badge { display: inline-flex; align-items: center; padding: 6px 10px; border-radius: 999px; font-size: 12px; font-weight: 950; white-space: nowrap; }
+.consultation-reports-view-badge.success { color: #047857; background: #d1fae5; }
+.consultation-reports-view-badge.warning { color: #b45309; background: #fef3c7; }
+.consultation-reports-view-badge.danger { color: #b91c1c; background: #fee2e2; }
+.consultation-reports-view-badge.neutral { color: #475569; background: #f1f5f9; }
+.consultation-reports-view-empty { text-align: center; color: #64748b; padding: 34px !important; }
+.consultation-reports-view-toast { position: fixed; right: 28px; bottom: 28px; padding: 14px 18px; border-radius: 18px; color: white; background: #0f172a; box-shadow: 0 18px 50px rgba(15,23,42,.28); z-index: 80; font-weight: 900; }
+.consultation-reports-view-modal-backdrop { position: fixed; inset: 0; background: rgba(15,23,42,.58); display: grid; place-items: center; padding: 20px; z-index: 50; }
+.consultation-reports-view-modal { position: relative; max-width: 760px; max-height: min(760px, 92vh); overflow-y: auto; width: 100%; padding: 28px; background: white; border-radius: 30px; box-shadow: 0 24px 90px rgba(15,23,42,.35); }
+.consultation-reports-view-modal h3 { margin: 14px 0 18px; font-size: 28px; letter-spacing: -.8px; }
+.consultation-reports-view-close { position: absolute; top: 16px; right: 16px; width: 38px; height: 38px; border-radius: 14px; border: 0; background: #f1f5f9; color: #0f172a; font-size: 24px; }
+.consultation-reports-view-detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+.consultation-reports-view-detail-grid article { padding: 14px; border-radius: 18px; background: #f8fafc; border: 1px solid #e2e8f0; }
+.consultation-reports-view-detail-grid span { display: block; color: #64748b; font-weight: 900; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }
+.consultation-reports-view-detail-grid strong { display: block; margin-top: 6px; color: #0f172a; }
+.consultation-reports-view-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+.consultation-reports-view-form-grid label { display: grid; gap: 7px; font-weight: 900; color: #334155; }
+.consultation-reports-view-modal-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 22px; }
+@media (max-width: 1100px) { .consultation-reports-view-hero { flex-direction: column; align-items: flex-start; } .consultation-reports-view-toolbar { grid-template-columns: 1fr 1fr; } .consultation-reports-view-summary { grid-template-columns: 1fr; } }
+@media (max-width: 680px) { .consultation-reports-view-toolbar, .consultation-reports-view-detail-grid, .consultation-reports-view-form-grid { grid-template-columns: 1fr; } .consultation-reports-view-hero-actions { width: 100%; } .consultation-reports-view-hero-actions button { flex: 1; } }
+
+
+
+/* ============================================================
+   REPORTES BÁSICOS - USUARIO CONSULTA
+   Pegar al final del styles.css
+   ============================================================ */
+
+.consultation-reports-view-page,
+.consultation-reports-view-page * {
+  box-sizing: border-box;
+}
+
+.consultation-reports-view-page {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.consultation-reports-view-hero {
+  background:
+    radial-gradient(circle at top left, rgba(22, 163, 74, 0.14), transparent 34%),
+    linear-gradient(135deg, #ffffff, #f8fafc);
+}
+
+.consultation-reports-view-hero-actions button:first-child {
+  background: linear-gradient(135deg, #16a34a, #059669);
+}
+
+.consultation-reports-insight-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 1fr);
+  gap: 16px;
+  align-items: stretch;
+  padding: 22px;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top left, rgba(22, 163, 74, 0.13), transparent 36%),
+    linear-gradient(135deg, #ffffff, #f8fafc);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 14px 42px rgba(15, 23, 42, 0.06);
+}
+
+.consultation-reports-insight-card > div:first-child span,
+.consultation-reports-chart-card > div:first-child span,
+.consultation-reports-guide-card > span {
+  display: inline-flex;
+  padding: 7px 11px;
+  border-radius: 999px;
+  color: #16a34a;
+  background: #ecfdf5;
+  font-size: 12px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.consultation-reports-insight-card h3,
+.consultation-reports-chart-card h3,
+.consultation-reports-guide-card h3 {
+  margin: 10px 0 8px;
+  color: #0f172a;
+  font-size: 25px;
+  letter-spacing: -0.7px;
+}
+
+.consultation-reports-insight-card p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+.consultation-reports-insight-main {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.consultation-reports-insight-main article {
+  padding: 15px;
+  border-radius: 20px;
+  background: white;
+  border: 1px solid #e2e8f0;
+}
+
+.consultation-reports-insight-main span {
+  display: block;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.consultation-reports-insight-main strong {
+  display: block;
+  margin-top: 8px;
+  color: #0f172a;
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+.consultation-reports-insight-main small {
+  display: block;
+  margin-top: 5px;
+  color: #64748b;
+  font-weight: 800;
+}
+
+.consultation-reports-analytics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.consultation-reports-chart-card,
+.consultation-reports-guide-card {
+  padding: 20px;
+  border-radius: 26px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 14px 38px rgba(15, 23, 42, 0.06);
+}
+
+.consultation-reports-bars {
+  display: grid;
+  gap: 13px;
+  margin-top: 18px;
+}
+
+.consultation-reports-bar {
+  padding: 13px;
+  border-radius: 18px;
+  background: #f8fafc;
+  border: 1px solid #eef2f7;
+}
+
+.consultation-reports-bar div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.consultation-reports-bar strong {
+  color: #0f172a;
+}
+
+.consultation-reports-bar small {
+  color: #64748b;
+  font-weight: 900;
+}
+
+.consultation-reports-bar > span {
+  display: block;
+  overflow: hidden;
+  height: 12px;
+  border-radius: 999px;
+  background: #e2e8f0;
+}
+
+.consultation-reports-bar i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #16a34a, #22c55e);
+}
+
+.consultation-reports-guide-card > div {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.consultation-reports-guide-card article {
+  padding: 14px;
+  border-radius: 18px;
+  background: #f8fafc;
+  border: 1px solid #eef2f7;
+}
+
+.consultation-reports-guide-card strong {
+  display: block;
+  color: #0f172a;
+}
+
+.consultation-reports-guide-card p {
+  margin: 7px 0 0;
+  color: #64748b;
+  line-height: 1.55;
+  font-weight: 700;
+}
+
+.consultation-reports-empty-mini {
+  padding: 16px;
+  border-radius: 18px;
+  background: #f8fafc;
+  color: #64748b;
+  font-weight: 800;
+  border: 1px dashed #cbd5e1;
+}
+
+.consultation-reports-modal-subtitle {
+  margin: -8px 0 18px;
+  color: #64748b;
+  font-weight: 800;
+}
+
+.consultation-reports-detail-note {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 20px;
+  background: #ecfdf5;
+  border: 1px solid #bbf7d0;
+}
+
+.consultation-reports-detail-note strong {
+  color: #047857;
+}
+
+.consultation-reports-detail-note p {
+  margin: 8px 0 0;
+  color: #334155;
+  line-height: 1.7;
+}
+
+.consultation-reports-view-table-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.consultation-reports-view-table-wrap::-webkit-scrollbar {
+  height: 8px;
+}
+
+.consultation-reports-view-table-wrap::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 999px;
+}
+
+.consultation-reports-view-table-wrap::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+
+/* Responsive */
+@media (max-width: 1180px) {
+  .consultation-reports-insight-card {
+    grid-template-columns: 1fr;
+  }
+
+  .consultation-reports-insight-main {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .consultation-reports-analytics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .consultation-reports-insight-main {
+    grid-template-columns: 1fr;
+  }
+
+  .consultation-reports-view-table-wrap table {
+    min-width: 860px;
+  }
+}
+
+@media (max-width: 560px) {
+  .consultation-reports-view-hero {
+    padding: 18px;
+    border-radius: 22px;
+  }
+
+  .consultation-reports-view-hero h2 {
+    font-size: 26px;
+  }
+
+  .consultation-reports-view-hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .consultation-reports-view-hero-actions button {
+    width: 100%;
+  }
+
+  .consultation-reports-insight-card,
+  .consultation-reports-chart-card,
+  .consultation-reports-guide-card {
+    padding: 16px;
+    border-radius: 22px;
+  }
+
+  .consultation-reports-insight-card h3,
+  .consultation-reports-chart-card h3,
+  .consultation-reports-guide-card h3 {
+    font-size: 21px;
+  }
+
+  .consultation-reports-view-modal-backdrop {
+    padding: 12px;
+    align-items: end;
+  }
+
+  .consultation-reports-view-modal {
+    max-width: 100%;
+    max-height: 88vh;
+    border-radius: 24px 24px 0 0;
+    padding: 22px;
+  }
+
+  .consultation-reports-view-detail-grid,
+  .consultation-reports-view-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .consultation-reports-view-toast {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    text-align: center;
+  }
+}
