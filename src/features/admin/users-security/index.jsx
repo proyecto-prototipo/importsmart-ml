@@ -73,7 +73,6 @@ const columns = [
 const filterFields = ["rol", "estado"];
 
 const actions = [
-  { id: "view", label: "Ver detalle" },
   { id: "edit", label: "Editar" },
   { id: "suspend", label: "Suspender" },
   { id: "delete", label: "Eliminar" }
