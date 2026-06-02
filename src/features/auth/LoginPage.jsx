@@ -8,6 +8,12 @@ export default function LoginPage({ onLogin }) {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
 
+  const manualPreviewUrl =
+    "https://drive.google.com/file/d/1E1BBkp8SV9rySbVYkbvncRpsrJ6j7rW1/preview";
+
+  const manualDownloadUrl =
+    "https://drive.google.com/uc?export=download&id=1E1BBkp8SV9rySbVYkbvncRpsrJ6j7rW1";
+
   const roleStyles = ["role-admin", "role-analista", "role-gerente", "role-consulta"];
   const roleIcons = ["🛡️", "📊", "📦", "👁️"];
 
@@ -229,6 +235,26 @@ export default function LoginPage({ onLogin }) {
                 Ingresar como {selectedDemo?.roleLabel ?? "usuario"}
                 <span>→</span>
               </button>
+
+              <div className="login-manual-actions">
+                <a
+                  href={manualPreviewUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="login-manual-button login-manual-view"
+                >
+                  Ver manual de usuario
+                </a>
+
+                <a
+                  href={manualDownloadUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="login-manual-button login-manual-download"
+                >
+                  Descargar manual
+                </a>
+              </div>
             </form>
           </div>
         </section>

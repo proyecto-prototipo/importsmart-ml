@@ -545,6 +545,47 @@
   background: linear-gradient(135deg, var(--color-consulta), #334155);
 }
 
+.login-manual-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.login-manual-button {
+  height: 42px;
+  border-radius: 13px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease;
+}
+
+.login-manual-view {
+  background: #f8fafc;
+  color: #0f172a;
+  border: 1px solid #cbd5e1;
+}
+
+.login-manual-view:hover {
+  background: #eef2f7;
+  border-color: #94a3b8;
+}
+
+.login-manual-download {
+  background: #0f172a;
+  color: #ffffff;
+  border: 1px solid #0f172a;
+}
+
+.login-manual-download:hover {
+  background: #1e293b;
+  border-color: #1e293b;
+}
+
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 1100px) {
@@ -587,6 +628,10 @@
   }
 
   .login-hero-footer-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .login-manual-actions {
     grid-template-columns: 1fr;
   }
 }
